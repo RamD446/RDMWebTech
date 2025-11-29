@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RDMWebTech – Web Development Solutions</title>
+    <title>RDMWebTech – Modern Web Development</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
         .hero {
             background: linear-gradient(135deg, #0d6efd, #6610f2);
             color: white;
-            padding: 120px 0;
+            padding: 160px 0 120px;
             text-align: center;
         }
         .hero h1 {
             font-size: 3rem;
             font-weight: 700;
         }
-        .service-card {
+        .service-card, .tech-card, .contact-card {
             transition: .3s;
+            border-radius: 12px;
         }
-        .service-card:hover {
+        .service-card:hover, .tech-card:hover, .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         footer {
             background: #111;
             color: #ccc;
             padding: 30px 0;
+            text-align: center;
+        }
+        .section-title {
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        html {
+            scroll-padding-top: 80px;
         }
     </style>
 </head>
@@ -42,55 +59,63 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">RDMWebTech</a>
+            <a class="navbar-brand fw-bold" href="javascript:void(0)">RDMWebTech</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="javascript:void(0)" onclick="scrollToSection('home')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('services')">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('technologies')">Technologies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('about')">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Smooth scroll JS -->
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <h1>We Build Modern Web Applications</h1>
-            <p class="lead mt-3">Fast • Secure • Scalable • Custom Solutions for Your Business</p>
-            <a href="#contact" class="btn btn-light btn-lg mt-3">Get Started</a>
+            <p class="lead mt-3">Fast • Secure • Scalable • Custom Solutions for Every Business</p>
+            <a onclick="scrollToSection('contact')" class="btn btn-light btn-lg mt-3">Get Started</a>
         </div>
     </section>
 
     <!-- Services -->
     <section id="services" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4 fw-bold">Our Services</h2>
+            <h2 class="text-center mb-4 section-title">Our Services</h2>
             <div class="row g-4">
 
                 <div class="col-md-4">
-                    <div class="card service-card p-3 text-center">
+                    <div class="card service-card p-4 text-center shadow-sm">
                         <h5 class="fw-bold">Web Development</h5>
-                        <p>Custom websites and applications built using modern frameworks and best practices.</p>
+                        <p>Large-scale & small-scale applications using latest modern technologies.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card service-card p-3 text-center">
+                    <div class="card service-card p-4 text-center shadow-sm">
                         <h5 class="fw-bold">UI / UX Design</h5>
-                        <p>Clean, responsive, and user-friendly designs tailored to your audience.</p>
+                        <p>Responsive, clean, visually appealing interfaces for modern web apps.</p>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card service-card p-3 text-center">
-                        <h5 class="fw-bold">API & Backend Development</h5>
-                        <p>Powerful and secure backend systems for your web or mobile application.</p>
+                    <div class="card service-card p-4 text-center shadow-sm">
+                        <h5 class="fw-bold">API & Backend</h5>
+                        <p>Secure backend development using .NET Core, Node.js, Firebase & more.</p>
                     </div>
                 </div>
 
@@ -98,52 +123,102 @@
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-5 bg-light">
+    <!-- Technologies -->
+    <section id="technologies" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4 fw-bold">About Us</h2>
+            <h2 class="text-center mb-4 section-title">Technologies We Use</h2>
+
+            <div class="row g-4 text-center">
+
+                <div class="col-md-3">
+                    <div class="card tech-card p-4 shadow-sm">
+                        <h5 class="fw-bold">Angular</h5>
+                        <p class="text-muted">Enterprise Frontend Apps</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card tech-card p-4 shadow-sm">
+                        <h5 class="fw-bold">React</h5>
+                        <p class="text-muted">Lightning-Fast SPA Development</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card tech-card p-4 shadow-sm">
+                        <h5 class="fw-bold">.NET Core</h5>
+                        <p class="text-muted">High-Performance Backends</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card tech-card p-4 shadow-sm">
+                        <h5 class="fw-bold">MSSQL / Firebase</h5>
+                        <p class="text-muted">Secure Cloud & Database Solutions</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 section-title">About Us</h2>
             <p class="text-center mx-auto" style="max-width: 700px;">
-                RDMWebTech is a web development studio dedicated to building high-quality digital solutions. 
-                We focus on performance, clean code, and modern design to deliver the best experience to our clients.
+                RDMWebTech is a modern web development company specializing in high-quality, 
+                scalable, and fast web applications. We use leading technologies like Angular, 
+                React, .NET Core, MSSQL Server, and Firebase to create powerful digital products.
             </p>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-5">
+    <!-- Contact Information Section -->
+    <section id="contact" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4 fw-bold">Contact Us</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter your name">
-                        </div>
+            <h2 class="text-center mb-4 section-title">Contact Information</h2>
 
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" placeholder="Enter your email">
-                        </div>
+            <div class="row justify-content-center g-4">
 
-                        <div class="mb-3">
-                            <label class="form-label">Message</label>
-                            <textarea class="form-control" rows="4" placeholder="Type your message"></textarea>
-                        </div>
-
-                        <button class="btn btn-primary w-100">Send</button>
-                    </form>
+                <div class="col-md-4">
+                    <div class="card contact-card text-center p-4 shadow-sm border-0">
+                        <span style="font-size: 40px;">📧</span>
+                        <h5 class="fw-bold mt-3">Email</h5>
+                        <p class="text-muted">ramana9000r@gmail.com</p>
+                    </div>
                 </div>
+
+                <div class="col-md-4">
+                    <div class="card contact-card text-center p-4 shadow-sm border-0">
+                        <span style="font-size: 40px;">📱</span>
+                        <h5 class="fw-bold mt-3">Phone</h5>
+                        <p class="text-muted">8179479516</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card contact-card text-center p-4 shadow-sm border-0">
+                        <span style="font-size: 40px;">📍</span>
+                        <h5 class="fw-bold mt-3">Location</h5>
+                        <p class="text-muted">India</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center">
-        <p>© 2025 RDMWebTech. All rights reserved.</p>
+    <footer>
+        <h5>RDMWebTech</h5>
+        <p>Email: ramana9000r@gmail.com | Phone: 8179479516</p>
+        <p class="mt-2">© 2025 RDMWebTech. All Rights Reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
