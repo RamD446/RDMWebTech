@@ -1,0 +1,123 @@
+/* GENERAL STYLING */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+.section-padding {
+  padding: 50px 0;
+}
+
+.small-section {
+  padding: 30px 0;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background: linear-gradient(135deg, #0d6efd 0%, #011c45 100%);
+  color: #fff;
+  padding: 80px 15px 50px;
+}
+
+.hero-section .small-hero h2 {
+  font-size: 1.8rem;
+}
+
+.hero-section .small-lead {
+  font-size: 0.95rem;
+}
+
+.hero-buttons a {
+  font-size: 0.85rem;
+  padding: 5px 12px;
+}
+
+/* CARDS */
+.glass-card, .tech-card, .contact-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glass-card:hover, .tech-card:hover, .contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.small-card i {
+  margin-bottom: 8px;
+}
+
+/* TEXT */
+.section-title {
+  font-weight: 600;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  color: #495057;
+}
+
+/* TECHNOLOGIES */
+.tech-card {
+  border: 1px solid #dee2e6;
+}
+
+.bg-light .tech-card {
+  background: #ffffff;
+}
+
+/* CONTACT */
+.contact-card {
+  border: 1px solid #dee2e6;
+  background: #ffffff;
+}
+
+/* SMALL WHATSAPP BUTTON */
+.whatsapp-btn-sm {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: #25D366;       /* WhatsApp green */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;           /* smaller icon */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background 0.2s;
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.whatsapp-btn-sm:hover {
+  background: #1ebe5d;       /* slightly darker on hover */
+  transform: scale(1.1);     /* subtle pop effect */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 15px 30px;
+  }
+
+  .hero-buttons a {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+
+  .small-card h5 {
+    font-size: 0.85rem;
+  }
+
+  .small-card p {
+    font-size: 0.75rem;
+  }
+}
