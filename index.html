@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDMWebTech.com – Modern Web Development</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="RDMWebTech delivers modern, scalable, and secure web applications using Angular, React, .NET Core, MSSQL, and Firebase.">
+    <meta name="keywords"
+        content="Web Development, UI/UX Design, Angular, React, .NET Core, MSSQL, Firebase, Modern Web Apps, RDMWebTech">
+    <meta name="author" content="RDMWebTech">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="RDMWebTech.com – Modern Web Development">
+    <meta property="og:description" content="Modern, scalable and secure web applications for businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rdmwebtech.com/">
+    <meta property="og:image" content="https://rdmwebtech.com/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Bootstrap + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f5f7fa;
+            --text-color: #111;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --footer-bg: #111;
+            --footer-text: #ccc;
+        }
+
+        /* DARK THEME VARIABLES */
+        .dark-mode {
+            --bg-color: #0f0f0f;
+            --text-color: #f5f5f5;
+            --card-bg: rgba(40, 40, 40, 0.92);
+            --footer-bg: #000;
+            --footer-text: #aaa;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            scroll-behavior: smooth;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: 0.3s ease-in-out;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            background: #111;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: #0d6efd !important;
+        }
+
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        /* Theme Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 22px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        #home {
+            padding: 160px 20px;
+            background: linear-gradient(135deg, #0d6efd 0%, #011c45 100%);
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-buttons a {
+            margin: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Cards */
+        .glass-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 15px 0;
+            transition: 0.3s;
+        }
+
+        /* WhatsApp Floating Button SMALL SIZE */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg container px-3">
+            <a class="navbar-brand fw-bold fs-4 text-white">RDMWebTech.com</a>
+
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeBtn">
+                <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+            </button>
+
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#mobileMenu">
+                <i class="bi bi-list fs-2"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="" data-target="home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="technologies">Technologies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="offcanvas offcanvas-end text-bg-dark" id="mobileMenu">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">RDMWebTech.com</h5>
+                <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <a class="nav-link text-white mb-2" href="" data-target="home" data-bs-dismiss="offcanvas">Home</a>
+                <a class="nav-link text-white mb-2" href="" data-target="services" data-bs-dismiss="offcanvas">Services</a>
+                <a class="nav-link text-white mb-2" href="" data-target="technologies" data-bs-dismiss="offcanvas">Technologies</a>
+                <a class="nav-link text-white mb-2" href="" data-target="about" data-bs-dismiss="offcanvas">About</a>
+                <a class="nav-link text-white mb-2" href="" data-target="contact" data-bs-dismiss="offcanvas">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="container">
+            <h3>Build Powerful, Modern Web Applications</h3>
+            <p>High-performance • Secure • Scalable — Built with the latest technologies</p>
+
+            <div class="hero-buttons mt-4">
+                <a href="" data-target="services" class="btn btn-primary btn-lg px-4 py-2">Our Services</a>
+
+                <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20web%20development%20services."
+                    class="btn btn-outline-light btn-lg px-4 py-2" target="_blank">
+                    Contact on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="bi bi-window fs-1 text-primary"></i>
+                        <h5 class="fw-bold mt-3">Web Development</h5>
+                        <p>High-quality applications for businesses of any size.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="bi bi-palette-fill fs-1 text-danger"></i>
+                        <h5 class="fw-bold mt-3">UI / UX Design</h5>
+                        <p>Beautiful, responsive, user-friendly interfaces.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="bi bi-hdd-network-fill fs-1 text-success"></i>
+                        <h5 class="fw-bold mt-3">Backend & APIs</h5>
+                        <p>Secure backend systems with .NET Core & Cloud.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIES -->
+    <section id="technologies" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Technologies We Use</h2>
+
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-braces fs-1 text-primary"></i>
+                        <h5 class="fw-bold mt-3">Angular</h5>
+                        <p>Enterprise applications</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-lightning-fill fs-1 text-info"></i>
+                        <h5 class="fw-bold mt-3">React</h5>
+                        <p>Fast SPA applications</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-cpu-fill fs-1 text-dark"></i>
+                        <h5 class="fw-bold mt-3">.NET Core</h5>
+                        <p>High-performance APIs</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-database-fill fs-1 text-success"></i>
+                        <h5 class="fw-bold mt-3">SQL / Firebase</h5>
+                        <p>Secure databases</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">About Us</h2>
+            <p class="text-center fs-5">
+                RDMWebTech delivers powerful modern web applications with clean code,
+                strong UI, and scalable architecture for businesses.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Information</h2>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="bi bi-envelope-fill fs-1 text-primary"></i>
+                        <h5 class="fw-bold mt-3">Email</h5>
+                        <p class="text-muted">ramana9000r@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="bi bi-telephone-fill fs-1 text-success"></i>
+                        <h5 class="fw-bold mt-3">Phone</h5>
+                        <p class="text-muted">8179479516</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <i class="bi bi-geo-alt-fill fs-1 text-danger"></i>
+                        <h5 class="fw-bold mt-3">Location</h5>
+                        <p class="text-muted">India</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="mb-0">© 2025 RDMWebTech.com. All Rights Reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Button SMALL -->
+    <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20web%20development%20services."
+        class="whatsapp-btn" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[data-target]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const id = this.getAttribute('data-target');
+                const target = document.getElementById(id);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <!-- THEME SCRIPT -->
+    <script>
+        const body = document.body;
+        const themeBtn = document.getElementById("themeBtn");
+        const themeIcon = document.getElementById("themeIcon");
+
+        // Load saved theme
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+            themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
+        }
+
+        themeBtn.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
+                localStorage.setItem("theme", "dark");
+            } else {
+                themeIcon.classList.replace("bi-sun-fill", "bi-moon-stars-fill");
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
