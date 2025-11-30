@@ -87,7 +87,7 @@
 
         /* Hero */
         #home {
-            padding: 160px 20px;
+            padding: 100px 20px; /* Reduced height */
             background: linear-gradient(135deg, #0d6efd 0%, #011c45 100%);
             color: #fff;
             text-align: center;
@@ -101,11 +101,19 @@
         /* Cards */
         .glass-card {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 20px; /* smaller padding */
             border-radius: 16px;
             border: 1px solid rgba(0, 0, 0, 0.08);
             text-align: center;
             transition: 0.3s;
+        }
+
+        .glass-card h5 {
+            font-size: 1.1rem;
+        }
+
+        .glass-card p {
+            font-size: 0.9rem;
         }
 
         .section-title {
@@ -114,15 +122,22 @@
             margin-bottom: 40px;
         }
 
+        /* Footer */
         footer {
             background: var(--footer-bg);
             color: var(--footer-text);
             text-align: center;
-            padding: 15px 0;
+            padding: 25px 0;
             transition: 0.3s;
         }
 
-        /* WhatsApp Floating Button SMALL SIZE */
+        footer .footer-note {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 5px;
+        }
+
+        /* WhatsApp Floating Button */
         .whatsapp-btn {
             position: fixed;
             bottom: 25px;
@@ -144,6 +159,14 @@
         .whatsapp-btn:hover {
             background: #1ebe5d;
         }
+
+        /* Mobile Offcanvas 50% width */
+        @media (max-width: 992px) {
+            #mobileMenu.offcanvas-end {
+                width: 50% !important;
+                box-shadow: -2px 0 12px rgba(0, 0, 0, 0.3);
+            }
+        }
     </style>
 </head>
 
@@ -152,7 +175,10 @@
     <!-- NAVBAR -->
     <header>
         <nav class="navbar navbar-expand-lg container px-3">
-            <a class="navbar-brand fw-bold fs-4 text-white">RDMWebTech.com</a>
+            <div class="d-flex align-items-center">
+    <a  class="btn btn-warning fw-bold text-dark px-3 py-1">RDMWebTech.com</a>
+</div>
+
 
             <!-- Theme Toggle Button -->
             <button class="theme-toggle" id="themeBtn">
@@ -169,7 +195,6 @@
                     <li class="nav-item"><a class="nav-link" href="" data-target="home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="" data-target="services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="" data-target="technologies">Technologies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="" data-target="about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="" data-target="contact">Contact</a></li>
                 </ul>
             </div>
@@ -185,7 +210,6 @@
                 <a class="nav-link text-white mb-2" href="" data-target="home" data-bs-dismiss="offcanvas">Home</a>
                 <a class="nav-link text-white mb-2" href="" data-target="services" data-bs-dismiss="offcanvas">Services</a>
                 <a class="nav-link text-white mb-2" href="" data-target="technologies" data-bs-dismiss="offcanvas">Technologies</a>
-                <a class="nav-link text-white mb-2" href="" data-target="about" data-bs-dismiss="offcanvas">About</a>
                 <a class="nav-link text-white mb-2" href="" data-target="contact" data-bs-dismiss="offcanvas">Contact</a>
             </div>
         </div>
@@ -213,27 +237,60 @@
         <div class="container">
             <h2 class="section-title text-center">Our Services</h2>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="glass-card">
-                        <i class="bi bi-window fs-1 text-primary"></i>
-                        <h5 class="fw-bold mt-3">Web Development</h5>
-                        <p>High-quality applications for businesses of any size.</p>
+                        <i class="bi bi-window fs-2 text-primary"></i>
+                        <h5 class="fw-bold mt-2">Web Development</h5>
+                        <p>Custom websites for any business.</p>
                     </div>
                 </div>
-
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="glass-card">
-                        <i class="bi bi-palette-fill fs-1 text-danger"></i>
-                        <h5 class="fw-bold mt-3">UI / UX Design</h5>
-                        <p>Beautiful, responsive, user-friendly interfaces.</p>
+                        <i class="bi bi-cart-fill fs-2 text-success"></i>
+                        <h5 class="fw-bold mt-2">E-Commerce</h5>
+                        <p>Online stores with payment integration.</p>
                     </div>
                 </div>
-
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="glass-card">
-                        <i class="bi bi-hdd-network-fill fs-1 text-success"></i>
-                        <h5 class="fw-bold mt-3">Backend & APIs</h5>
-                        <p>Secure backend systems with .NET Core & Cloud.</p>
+                        <i class="bi bi-basket-fill fs-2 text-warning"></i>
+                        <h5 class="fw-bold mt-2">Food Ordering</h5>
+                        <p>Restaurant ordering & delivery apps.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-receipt fs-2 text-danger"></i>
+                        <h5 class="fw-bold mt-2">Billing Systems</h5>
+                        <p>Secure billing and invoicing solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-person-lines-fill fs-2 text-info"></i>
+                        <h5 class="fw-bold mt-2">Corporate Apps</h5>
+                        <p>ERP & business management systems.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-globe fs-2 text-secondary"></i>
+                        <h5 class="fw-bold mt-2">Portfolio Sites</h5>
+                        <p>Personal or professional portfolio websites.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-bar-chart-fill fs-2 text-primary"></i>
+                        <h5 class="fw-bold mt-2">Analytics Apps</h5>
+                        <p>Data-driven dashboards & reporting tools.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-chat-dots-fill fs-2 text-success"></i>
+                        <h5 class="fw-bold mt-2">Chat & Messaging</h5>
+                        <p>Real-time chat applications.</p>
                     </div>
                 </div>
             </div>
@@ -244,7 +301,6 @@
     <section id="technologies" class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Technologies We Use</h2>
-
             <div class="row g-4 text-center">
                 <div class="col-md-3">
                     <div class="glass-card">
@@ -253,7 +309,6 @@
                         <p>Enterprise applications</p>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="glass-card">
                         <i class="bi bi-lightning-fill fs-1 text-info"></i>
@@ -261,7 +316,6 @@
                         <p>Fast SPA applications</p>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="glass-card">
                         <i class="bi bi-cpu-fill fs-1 text-dark"></i>
@@ -269,7 +323,6 @@
                         <p>High-performance APIs</p>
                     </div>
                 </div>
-
                 <div class="col-md-3">
                     <div class="glass-card">
                         <i class="bi bi-database-fill fs-1 text-success"></i>
@@ -277,62 +330,48 @@
                         <p>Secure databases</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">About Us</h2>
-            <p class="text-center fs-5">
-                RDMWebTech delivers powerful modern web applications with clean code,
-                strong UI, and scalable architecture for businesses.
-            </p>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Contact Information</h2>
-
-            <div class="row g-4 justify-content-center">
-
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="glass-card">
-                        <i class="bi bi-envelope-fill fs-1 text-primary"></i>
-                        <h5 class="fw-bold mt-3">Email</h5>
-                        <p class="text-muted">ramana9000r@gmail.com</p>
+                        <i class="bi bi-cloud-fill fs-1 text-primary"></i>
+                        <h5 class="fw-bold mt-3">AWS</h5>
+                        <p>Cloud infrastructure</p>
                     </div>
                 </div>
-
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="glass-card">
-                        <i class="bi bi-telephone-fill fs-1 text-success"></i>
-                        <h5 class="fw-bold mt-3">Phone</h5>
-                        <p class="text-muted">8179479516</p>
+                        <i class="bi bi-github fs-1 text-dark"></i>
+                        <h5 class="fw-bold mt-3">Git & GitHub</h5>
+                        <p>Version control & collaboration</p>
                     </div>
                 </div>
-
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="glass-card">
-                        <i class="bi bi-geo-alt-fill fs-1 text-danger"></i>
-                        <h5 class="fw-bold mt-3">Location</h5>
-                        <p class="text-muted">India</p>
+                        <i class="bi bi-bootstrap-fill fs-1 text-purple"></i>
+                        <h5 class="fw-bold mt-3">Bootstrap</h5>
+                        <p>Responsive UI framework</p>
                     </div>
                 </div>
-
+                <div class="col-md-3">
+                    <div class="glass-card">
+                        <i class="bi bi-file-code-fill fs-1 text-warning"></i>
+                        <h5 class="fw-bold mt-3">Node.js</h5>
+                        <p>Server-side JavaScript</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p class="mb-0">© 2025 RDMWebTech.com. All Rights Reserved.</p>
+        <div class="container-fluid px-5">
+            <p class="mb-1"><strong>Email:</strong> ramana9000r@gmail.com | <strong>Phone:</strong> 8179479516 | <strong>Location:</strong> India</p>
+            <p class="footer-note mb-0">We deliver modern, secure, and scalable web applications for your business growth.</p>
+            <p class="mt-2 mb-0">© 2025 RDMWebTech.com. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- WhatsApp Button SMALL -->
+    <!-- WhatsApp Button -->
     <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20web%20development%20services."
         class="whatsapp-btn" target="_blank">
         <i class="bi bi-whatsapp"></i>
@@ -356,7 +395,6 @@
         const themeBtn = document.getElementById("themeBtn");
         const themeIcon = document.getElementById("themeIcon");
 
-        // Load saved theme
         if (localStorage.getItem("theme") === "dark") {
             body.classList.add("dark-mode");
             themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
