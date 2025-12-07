@@ -1,427 +1,166 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RDMWebTech.com – Modern Web Development</title>
-
-<!-- SEO -->
-<meta name="description"
-    content="RDMWebTech delivers modern, scalable, and secure web applications using Angular, React, .NET Core, MSSQL, and Firebase.">
-<meta name="keywords"
-    content="Web Development, UI/UX Design, Angular, React, .NET Core, MSSQL, Firebase, Modern Web Apps, RDMWebTech">
-<meta name="author" content="RDMWebTech">
-
-<!-- Open Graph -->
-<meta property="og:title" content="RDMWebTech.com – Modern Web Development">
-<meta property="og:description" content="Modern, scalable and secure web applications for businesses.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://rdmwebtech.com/">
-<meta property="og:image" content="https://rdmwebtech.com/images/og-image.png">
-
-<!-- Favicon Links - Google Recommended Format -->
-<link rel="icon" href="https://rdmwebtech.com/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="https://rdmwebtech.com/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="https://rdmwebtech.com/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://rdmwebtech.com/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://rdmwebtech.com/apple-touch-icon.png">
-
-<!-- SEO Preview Image -->
-<link rel="image_src" href="https://rdmwebtech.com/images/og-image.png">
-
-<!-- Bootstrap + Icons -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDMWebTech.com – Modern Web Development</title>
+    <meta name="description" content="RDMWebTech delivers modern, scalable, and secure web applications using Angular, React, .NET Core, MSSQL, and Firebase.">
+    <meta name="keywords" content="Web Development, UI/UX Design, Angular, React, .NET Core, MSSQL, Firebase, Modern Web Apps, RDMWebTech">
+    <meta name="author" content="RDMWebTech">
+    <meta property="og:title" content="RDMWebTech.com – Modern Web Development">
+    <meta property="og:description" content="Modern, scalable and secure web applications for businesses.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rdmwebtech.com/">
+    <meta property="og:image" content="https://rdmwebtech.com/images/og-image.png">
+    <link rel="icon" href="https://rdmwebtech.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://rdmwebtech.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://rdmwebtech.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://rdmwebtech.com/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://rdmwebtech.com/apple-touch-icon.png">
+    <link rel="image_src" href="https://rdmwebtech.com/images/og-image.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f5f7fa;
-            --text-color: #111;
-            --card-bg: rgba(255, 255, 255, 0.92);
-            --footer-bg: #111;
-            --footer-text: #ccc;
+            --primary: #0d6efd;
+            --success: #198754;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --info: #0dcaf0;
+            --secondary: #6c757d;
+            --bg-color: #f8f9fc;
+            --text-color: #1a202c;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --border-color: #e5e7eb;
+            --footer-bg: #1a202c;
+            --footer-text: #cbd5e0;
         }
-
-        /* DARK THEME VARIABLES */
         .dark-mode {
-            --bg-color: #0f0f0f;
-            --text-color: #f5f5f5;
-            --card-bg: rgba(40, 40, 40, 0.92);
-            --footer-bg: #000;
-            --footer-text: #aaa;
+            --bg-color: #0f1419;
+            --text-color: #f1f5f9;
+            --card-bg: rgba(30, 41, 59, 0.95);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --border-color: #334155;
+            --footer-bg: #0a0e27;
+            --footer-text: #94a3b8;
         }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            scroll-behavior: smooth;
-            background: var(--bg-color);
-            color: var(--text-color);
-            transition: 0.3s ease-in-out;
-        }
-
-        header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 999;
-            background: #111;
-        }
-
-        .navbar-nav .nav-link {
-            color: #fff !important;
-            margin-left: 20px;
-            font-weight: 500;
-        }
-
-        .nav-link:hover {
-            color: #0d6efd !important;
-        }
-
-        html {
-            scroll-padding-top: 80px;
-        }
-
-        /* Theme Button */
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 22px;
-            margin-left: 20px;
-            cursor: pointer;
-        }
-
-        /* Hero */
-        #home {
-            padding: 100px 20px; /* Reduced height */
-            background: linear-gradient(135deg, #0d6efd 0%, #011c45 100%);
-            color: #fff;
-            text-align: center;
-        }
-
-        .hero-buttons a {
-            margin: 10px;
-            font-size: 1.1rem;
-        }
-
-        /* Cards */
-        .glass-card {
-            background: var(--card-bg);
-            padding: 20px; /* smaller padding */
-            border-radius: 16px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .glass-card h5 {
-            font-size: 1.1rem;
-        }
-
-        .glass-card p {
-            font-size: 0.9rem;
-        }
-
-        .section-title {
-            font-weight: 700;
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            text-align: center;
-            padding: 25px 0;
-            transition: 0.3s;
-        }
-
-        footer .footer-note {
-            font-size: 0.9rem;
-            color: #aaa;
-            margin-top: 5px;
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: #25D366;
-            color: white;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 25px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-            z-index: 9999;
-            text-decoration: none;
-        }
-
-        .whatsapp-btn:hover {
-            background: #1ebe5d;
-        }
-
-        /* Mobile Offcanvas 50% width */
-        @media (max-width: 992px) {
-            #mobileMenu.offcanvas-end {
-                width: 50% !important;
-                box-shadow: -2px 0 12px rgba(0, 0, 0, 0.3);
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-color); color: var(--text-color); transition: background-color 0.3s ease, color 0.3s ease; line-height: 1.6; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+        header { position: fixed; width: 100%; top: 0; z-index: 999; background: linear-gradient(135deg, #1a202c 0%, #0f1419 100%); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .navbar { padding: 1rem 0; }
+        .navbar-brand { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.5rem; background: linear-gradient(135deg, #0d6efd, #0dcaf0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .navbar-nav .nav-link { color: #cbd5e0 !important; margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; position: relative; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.5rem; }
+        .navbar-nav .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s ease; }
+        .navbar-nav .nav-link:hover { color: var(--primary) !important; }
+        .navbar-nav .nav-link:hover::after { width: 100%; }
+        .theme-toggle { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #cbd5e0; font-size: 20px; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s ease; margin-left: 1rem; }
+        .theme-toggle:hover { background: rgba(255, 255, 255, 0.15); color: var(--primary); }
+        .discount-banner { background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 18px 20px; text-align: center; margin-top: 80px; animation: pulse 2s infinite; box-shadow: 0 8px 25px rgba(220, 53, 69, 0.25); }
+        .discount-banner h4 { margin: 0; font-weight: 700; font-size: 1.4rem; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .discount-banner p { margin: 8px 0 0 0; font-size: 1rem; }
+        #home { padding: 120px 20px 80px; background: linear-gradient(135deg, var(--bg-color) 0%, rgba(13, 110, 253, 0.05) 100%); text-align: center; }
+        #home h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; animation: fadeInUp 0.6s ease forwards; }
+        #home > div > p:first-of-type { font-size: 1.2rem; color: var(--secondary); margin-bottom: 1rem; animation: fadeInUp 0.6s ease forwards; animation-delay: 0.1s; }
+        .discount-text { color: var(--danger); font-weight: 700; font-size: 1.15rem; margin: 1rem 0; animation: fadeInUp 0.6s ease forwards; animation-delay: 0.2s; }
+        .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; animation: fadeInUp 0.6s ease forwards; animation-delay: 0.3s; }
+        .hero-buttons .btn { padding: 12px 28px; font-weight: 600; border-radius: 8px; transition: all 0.3s ease; font-size: 1rem; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 0.5rem; }
+        .hero-buttons .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+        .btn-warning-custom { background: linear-gradient(135deg, #ffc107, #ff9800); color: #000; }
+        .btn-warning-custom:hover { background: linear-gradient(135deg, #ff9800, #f57c00); color: #000; }
+        @media (max-width: 768px) { #home h3 { font-size: 1.8rem; } #home > div > p:first-of-type { font-size: 1rem; } .hero-buttons { flex-direction: column; gap: 1rem; } .hero-buttons .btn { width: 100%; justify-content: center; } .navbar-nav .nav-link { margin-left: 0; padding: 0.5rem 0; } .discount-banner h4 { font-size: 1.1rem; } .discount-banner p { font-size: 0.9rem; } }
+        .glass-card { background: var(--card-bg); padding: 2rem 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; transition: all 0.3s ease; box-shadow: var(--card-shadow); height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .glass-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); border-color: var(--primary); }
+        .glass-card h5 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .glass-card p { font-size: 0.95rem; color: var(--secondary); margin-bottom: 0; }
+        .glass-card i { transition: all 0.3s ease; }
+        .glass-card:hover i { transform: scale(1.1) rotate(5deg); }
+        .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 2.5rem; margin-bottom: 3rem; position: relative; display: inline-block; width: 100%; }
+        .section-title::after { content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(135deg, var(--primary), var(--info)); border-radius: 2px; }
+        section { padding: 4rem 0; }
+        #about, #health { background: linear-gradient(135deg, rgba(13, 110, 253, 0.05) 0%, rgba(13, 202, 240, 0.05) 100%); }
+        #pricing { background: linear-gradient(135deg, rgba(25, 135, 84, 0.05) 0%, rgba(13, 110, 253, 0.05) 100%); }
+        .pricing-card { position: relative; overflow: hidden; border: 2px solid transparent; }
+        .pricing-card.popular { border-color: var(--success); transform: scale(1.05); }
+        .pricing-badge { position: absolute; top: -12px; right: 20px; background: var(--success); color: white; padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+        .price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.8rem; font-weight: 700; color: var(--primary); margin: 1.5rem 0; }
+        .feature-list { text-align: left; margin: 1.5rem 0; }
+        .feature-list li { padding: 0.8rem 0; border-bottom: 1px solid var(--border-color); }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list li i { margin-right: 0.8rem; color: var(--success); }
+        .feature-highlight { background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(13, 202, 240, 0.1)); padding: 1rem; border-left: 4px solid var(--primary); border-radius: 8px; margin: 1rem 0; }
+        .feature-highlight strong { color: var(--primary); }
+        footer { background: var(--footer-bg); color: var(--footer-text); padding: 3rem 0 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        footer .footer-section h6 { font-family: 'Plus Jakarta Sans', sans-serif; color: white; font-weight: 700; margin-bottom: 1rem; }
+        footer .footer-section ul { list-style: none; padding: 0; }
+        footer .footer-section ul li { margin-bottom: 0.8rem; }
+        footer .footer-section a { color: var(--footer-text); text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 0.8rem; }
+        footer .footer-section a:hover { color: var(--primary); transform: translateX(5px); }
+        footer .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; margin-top: 2rem; text-align: center; font-size: 0.9rem; }
+        .whatsapp-btn { position: fixed; bottom: 25px; right: 25px; background: linear-gradient(135deg, #25D366, #1ebe5d); color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35); z-index: 9999; text-decoration: none; transition: all 0.3s ease; border: none; }
+        .whatsapp-btn:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45); }
+        .offcanvas { background: linear-gradient(135deg, #1a202c 0%, #0f1419 100%); }
+        .offcanvas .btn-close { filter: brightness(0) invert(1); }
+        @media (max-width: 992px) { #home { padding: 100px 20px 60px; } .section-title { font-size: 2rem; } .pricing-card.popular { transform: scale(1); } .offcanvas-end { width: 70% !important; } }
+        @media (max-width: 576px) { #home { padding: 90px 15px 50px; } #home h3 { font-size: 1.6rem; margin-bottom: 0.8rem; } .glass-card { padding: 1.5rem 1rem; } .glass-card h5 { font-size: 1.1rem; } .section-title { font-size: 1.6rem; margin-bottom: 2rem; } .price { font-size: 2rem; } .whatsapp-btn { width: 50px; height: 50px; font-size: 24px; bottom: 20px; right: 20px; } .offcanvas-end { width: 100% !important; } footer { padding: 2rem 0 1rem; } }
+        .btn-icon { display: inline-flex; align-items: center; gap: 0.5rem; }
     </style>
 </head>
-
 <body>
-
-    <!-- NAVBAR -->
     <header>
-        <nav class="navbar navbar-expand-lg container px-3">
-            <div class="d-flex align-items-center">
-    <a  class="btn btn-warning fw-bold text-dark px-3 py-1">RDMWebTech.com</a>
-</div>
-
-
-           
+        <nav class="navbar navbar-expand-lg container-fluid px-3 px-md-4">
+            <a class="navbar-brand" href="#home"><i class="bi bi-code-slash"></i> RDMWebTech</a>
             <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="" data-target="home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="" data-target="services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="" data-target="technologies">Technologies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="" data-target="contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="home"><i class="bi bi-house"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="about"><i class="bi bi-info-circle"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="services"><i class="bi bi-briefcase"></i> Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="pricing"><i class="bi bi-tag"></i> Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="technologies"><i class="bi bi-cpu"></i> Tech</a></li>
+                    <li class="nav-item"><a class="nav-link" href="" data-target="contact"><i class="bi bi-telephone"></i> Contact</a></li>
                 </ul>
             </div>
-             <!-- Theme Toggle Button -->
-            <button class="theme-toggle" id="themeBtn">
-                <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
-            </button>
-
-            <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#mobileMenu">
-                <i class="bi bi-list fs-2"></i>
-            </button>
-
+            <button class="theme-toggle" id="themeBtn" title="Toggle Dark Mode"><i class="bi bi-moon-stars-fill" id="themeIcon"></i></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"><i class="bi bi-list fs-2"></i></button>
         </nav>
-
-        <!-- Mobile Menu -->
-        <div class="offcanvas offcanvas-end text-bg-dark" id="mobileMenu">
+        <div class="offcanvas offcanvas-end" id="mobileMenu">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title">RDMWebTech.com</h5>
+                <h5 class="offcanvas-title text-white"><i class="bi bi-code-slash"></i> RDMWebTech</h5>
                 <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body">
-                <a class="nav-link text-white mb-2" href="" data-target="home" data-bs-dismiss="offcanvas">Home</a>
-                <a class="nav-link text-white mb-2" href="" data-target="services" data-bs-dismiss="offcanvas">Services</a>
-                <a class="nav-link text-white mb-2" href="" data-target="technologies" data-bs-dismiss="offcanvas">Technologies</a>
-                <a class="nav-link text-white mb-2" href="" data-target="contact" data-bs-dismiss="offcanvas">Contact</a>
+                <ul class="navbar-nav flex-column gap-2">
+                    <li class="nav-item"><a class="nav-link text-white" href="" data-target="home" data-bs-dismiss="offcanvas"><i class="bi bi-house"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="" data-target="about" data-bs-dismiss="offcanvas"><i class="bi bi-info-circle"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="" data-target="services" data-bs-dismiss="offcanvas"><i class="bi bi-briefcase"></i> Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="" data-target="pricing" data-bs-dismiss="offcanvas"><i class="bi bi-tag"></i> Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="" data-target="technologies" data-bs-dismiss="offcanvas"><i class="bi bi-cpu"></i> Tech</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="" data-target="contact" data-bs-dismiss="offcanvas"><i class="bi bi-telephone"></i> Contact</a></li>
+                </ul>
             </div>
         </div>
     </header>
-
-    <!-- HERO SECTION -->
-    <section id="home">
-        <div class="container">
-            <h3>Build Powerful, Modern Web Applications</h3>
-            <p>High-performance • Secure • Scalable — Built with the latest technologies</p>
-
-            <div class="hero-buttons mt-4">
-                <a href="" data-target="services" class="btn btn-primary btn-lg px-4 py-2">Our Services</a>
-
-                <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20web%20development%20services."
-                    class="btn btn-outline-light btn-lg px-4 py-2" target="_blank">
-                    Contact on WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Our Services</h2>
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-window fs-2 text-primary"></i>
-                        <h5 class="fw-bold mt-2">Web Development</h5>
-                        <p>Custom websites for any business.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-cart-fill fs-2 text-success"></i>
-                        <h5 class="fw-bold mt-2">E-Commerce</h5>
-                        <p>Online stores with payment integration.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-basket-fill fs-2 text-warning"></i>
-                        <h5 class="fw-bold mt-2">Food Ordering</h5>
-                        <p>Restaurant ordering & delivery apps.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-receipt fs-2 text-danger"></i>
-                        <h5 class="fw-bold mt-2">Billing Systems</h5>
-                        <p>Secure billing and invoicing solutions.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-person-lines-fill fs-2 text-info"></i>
-                        <h5 class="fw-bold mt-2">Corporate Apps</h5>
-                        <p>ERP & business management systems.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-globe fs-2 text-secondary"></i>
-                        <h5 class="fw-bold mt-2">Portfolio Sites</h5>
-                        <p>Personal or professional portfolio websites.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-bar-chart-fill fs-2 text-primary"></i>
-                        <h5 class="fw-bold mt-2">Analytics Apps</h5>
-                        <p>Data-driven dashboards & reporting tools.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-chat-dots-fill fs-2 text-success"></i>
-                        <h5 class="fw-bold mt-2">Chat & Messaging</h5>
-                        <p>Real-time chat applications.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TECHNOLOGIES -->
-    <section id="technologies" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">Technologies We Use</h2>
-            <div class="row g-4 text-center">
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-braces fs-1 text-primary"></i>
-                        <h5 class="fw-bold mt-3">Angular</h5>
-                        <p>Enterprise applications</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-lightning-fill fs-1 text-info"></i>
-                        <h5 class="fw-bold mt-3">React</h5>
-                        <p>Fast SPA applications</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-cpu-fill fs-1 text-dark"></i>
-                        <h5 class="fw-bold mt-3">.NET Core</h5>
-                        <p>High-performance APIs</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-database-fill fs-1 text-success"></i>
-                        <h5 class="fw-bold mt-3">SQL / Firebase</h5>
-                        <p>Secure databases</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-cloud-fill fs-1 text-primary"></i>
-                        <h5 class="fw-bold mt-3">AWS</h5>
-                        <p>Cloud infrastructure</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-github fs-1 text-dark"></i>
-                        <h5 class="fw-bold mt-3">Git & GitHub</h5>
-                        <p>Version control & collaboration</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-bootstrap-fill fs-1 text-purple"></i>
-                        <h5 class="fw-bold mt-3">Bootstrap</h5>
-                        <p>Responsive UI framework</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass-card">
-                        <i class="bi bi-file-code-fill fs-1 text-warning"></i>
-                        <h5 class="fw-bold mt-3">Node.js</h5>
-                        <p>Server-side JavaScript</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container-fluid px-5">
-            <p class="mb-1"><strong>Email:</strong> <a href="mailto:ramana9000r@gmail.com" style="color: inherit;">ramana9000r@gmail.com</a> | <strong>Phone:</strong> <a href="tel:+918179479516" style="color: inherit; text-decoration: none;">+91 8179479516</a> | <strong>Location:</strong> India</p>
-            <p class="footer-note mb-0">We deliver modern, secure, and scalable web applications for your business growth.</p>
-            <p class="mt-2 mb-0">© 2025 RDMWebTech.com. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20web%20development%20services."
-        class="whatsapp-btn" target="_blank">
-        <i class="bi bi-whatsapp"></i>
-    </a>
-
-    <!-- Smooth Scroll -->
-    <script>
-        document.querySelectorAll('a[data-target]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const id = this.getAttribute('data-target');
-                const target = document.getElementById(id);
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-
-    <!-- THEME SCRIPT -->
-    <script>
-        const body = document.body;
-        const themeBtn = document.getElementById("themeBtn");
-        const themeIcon = document.getElementById("themeIcon");
-
-        if (localStorage.getItem("theme") === "dark") {
-            body.classList.add("dark-mode");
-            themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
-        }
-
-        themeBtn.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-
-            if (body.classList.contains("dark-mode")) {
-                themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
-                localStorage.setItem("theme", "dark");
-            } else {
-                themeIcon.classList.replace("bi-sun-fill", "bi-moon-stars-fill");
-                localStorage.setItem("theme", "light");
-            }
-        });
-    </script>
-
+    <div class="discount-banner"><h4><i class="bi bi-lightning-fill"></i> SPECIAL OFFER - ₹5,000 DISCOUNT! <i class="bi bi-lightning-fill"></i></h4><p><strong> Limited Time Only - 24 HOURS Valid | Act Now!</strong></p></div>
+    <section id="home"><div class="container"><h3>Build Powerful, Modern Web Applications</h3><p>High-performance  Secure  Scalable — Built with the latest technologies</p><p class="discount-text"><i class="bi bi-check-circle-fill"></i> Get ₹5,000 OFF Today! Limited 24-Hour Offer</p><div class="hero-buttons"><a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20want%20to%20avail%20the%20₹5000%20discount%20offer%20for%2024%20hours." class="btn btn-warning-custom btn-icon" target="_blank"><i class="bi bi-lightning-charge-fill"></i> Claim ₹5,000 Discount</a><a href="" data-target="services" class="btn btn-primary btn-icon"><i class="bi bi-arrow-right-circle"></i> Our Services</a><a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20web%20development%20services." class="btn btn-outline-primary btn-icon" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a></div></div></section>
+    <section id="about" class="py-5"><div class="container"><h2 class="section-title text-center">About RDMWebTech</h2><div class="row g-4 align-items-stretch mt-4"><div class="col-md-6"><div class="glass-card"><div class="mb-3"><i class="bi bi-rocket-takeoff text-primary" style="font-size: 2.5rem;"></i></div><h5 class="fw-bold text-primary mb-3">Our Vision</h5><p style="color: var(--secondary); flex-grow: 1;">We are committed to delivering high-quality web solutions that transform your business. With a focus on innovation, security, and scalability, RDMWebTech is your trusted partner for modern web development.</p></div></div><div class="col-md-6"><div class="glass-card"><div class="mb-3"><i class="bi bi-heart-pulse text-success" style="font-size: 2.5rem;"></i></div><h5 class="fw-bold text-success mb-3">Company Health</h5><ul class="list-unstyled"><li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> <strong>4+ Years Experience</strong></li><li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> <strong>50+ Projects</strong></li><li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> <strong>100% Satisfaction</strong></li><li class="mb-2"><i class="bi bi-check-circle-fill text-success"></i> Certified Team</li><li class="mb-0"><i class="bi bi-check-circle-fill text-success"></i> 24/7 Support</li></ul></div></div></div><div class="row g-4 mt-2 align-items-stretch"><div class="col-md-4 col-sm-6"><div class="glass-card text-center"><i class="bi bi-shield-check text-info" style="font-size: 2.5rem;"></i><h6 class="mt-3 fw-bold">Quality Assurance</h6><p style="font-size: 0.9rem; color: var(--secondary);">Rigorous testing & quality checks</p></div></div><div class="col-md-4 col-sm-6"><div class="glass-card text-center"><i class="bi bi-clock-history text-warning" style="font-size: 2.5rem;"></i><h6 class="mt-3 fw-bold">On-Time Delivery</h6><p style="font-size: 0.9rem; color: var(--secondary);">We respect deadlines always</p></div></div><div class="col-md-4 col-sm-6"><div class="glass-card text-center"><i class="bi bi-headset text-success" style="font-size: 2.5rem;"></i><h6 class="mt-3 fw-bold">Post-Launch Support</h6><p style="font-size: 0.9rem; color: var(--secondary);">Comprehensive maintenance included</p></div></div></div></div></section>
+    <section id="services" class="py-5"><div class="container"><h2 class="section-title text-center">Our Services</h2><div class="row g-4 mt-4"><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-window fs-1 text-primary"></i><h5 class="fw-bold mt-3">Web Development</h5><p>Custom websites tailored to your business needs.</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-cart-fill fs-1 text-success"></i><h5 class="fw-bold mt-3">E-Commerce</h5><p>Online stores with secure payment integration.</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-basket-fill fs-1 text-warning"></i><h5 class="fw-bold mt-3">Food Ordering</h5><p>Restaurant apps with delivery management.</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-receipt fs-1 text-danger"></i><h5 class="fw-bold mt-3">Billing Systems</h5><p>Secure invoicing and payment solutions.</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-person-lines-fill fs-1 text-info"></i><h5 class="fw-bold mt-3">Corporate Apps</h5><p>ERP and business management systems.</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-globe fs-1 text-secondary"></i><h5 class="fw-bold mt-3">Portfolio Sites</h5><p>Professional portfolio websites.</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-bar-chart-fill fs-1 text-primary"></i><h5 class="fw-bold mt-3">Analytics Apps</h5><p>Data dashboards and reporting tools.</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-chat-dots-fill fs-1 text-success"></i><h5 class="fw-bold mt-3">Chat & Messaging</h5><p>Real-time communication platforms.</p></div></div></div></div></section>
+    <section id="pricing" class="py-5"><div class="container"><h2 class="section-title text-center">Our Development Packages</h2><div class="row g-4 mt-4"><div class="col-lg-4 col-md-6"><div class="glass-card pricing-card"><h5 class="fw-bold text-primary mb-2"><i class="bi bi-star-fill text-warning"></i> Basic Package</h5><div class="price"><span class="price-currency">₹</span>25,000</div><div class="feature-highlight"><strong><i class="bi bi-lightning-charge-fill"></i> 3 Pages Website</strong></div><ul class="list-unstyled feature-list"><li><i class="bi bi-check-circle-fill"></i> Responsive Design</li><li><i class="bi bi-check-circle-fill"></i> SEO Optimized</li><li><i class="bi bi-check-circle-fill"></i> Contact Form</li><li><strong style="color: var(--primary);">After Delivery:</strong></li><li><i class="bi bi-star-fill text-warning"></i> <strong>3 Enhancement Sessions</strong></li><li><i class="bi bi-shield-check text-info"></i> <strong>2 Years Domain Warranty</strong></li><li><i class="bi bi-headset text-success"></i> 6 Months Free Support</li></ul><a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20the%20Basic%20Package." class="btn btn-primary w-100 mt-3" target="_blank"><i class="bi bi-whatsapp"></i> Order Now</a></div></div><div class="col-lg-4 col-md-6"><div class="glass-card pricing-card popular"><div class="pricing-badge"> POPULAR</div><h5 class="fw-bold text-success mb-2 mt-2"><i class="bi bi-gem"></i> Premium Package</h5><div class="price text-success"><span class="price-currency">₹</span>50,000</div><div class="feature-highlight" style="background: rgba(25, 135, 84, 0.1); border-left-color: var(--success);"><strong style="color: var(--success);"><i class="bi bi-lightning-charge-fill"></i> 8 Pages Website</strong></div><ul class="list-unstyled feature-list"><li><i class="bi bi-check-circle-fill"></i> Advanced Design</li><li><i class="bi bi-check-circle-fill"></i> E-Commerce Ready</li><li><i class="bi bi-check-circle-fill"></i> Database Integration</li><li><strong style="color: var(--success);">After Delivery:</strong></li><li><i class="bi bi-star-fill text-warning"></i> <strong>5 Enhancement Sessions</strong></li><li><i class="bi bi-shield-check text-info"></i> <strong>3 Years Domain Warranty</strong></li><li><i class="bi bi-headset text-success"></i> 1 Year Priority Support</li></ul><a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20the%20Premium%20Package." class="btn btn-success w-100 mt-3" target="_blank"><i class="bi bi-whatsapp"></i> Order Now</a></div></div><div class="col-lg-4 col-md-6"><div class="glass-card pricing-card"><h5 class="fw-bold text-danger mb-2"><i class="bi bi-rocket-fill"></i> Enterprise Package</h5><div class="price text-danger">Custom</div><div class="feature-highlight" style="background: rgba(220, 53, 69, 0.1); border-left-color: var(--danger);"><strong style="color: var(--danger);"><i class="bi bi-infinity"></i> Unlimited Pages</strong></div><ul class="list-unstyled feature-list"><li><i class="bi bi-check-circle-fill"></i> Full Custom Development</li><li><i class="bi bi-check-circle-fill"></i> API Integration</li><li><i class="bi bi-check-circle-fill"></i> Advanced Analytics</li><li><strong style="color: var(--danger);">After Delivery:</strong></li><li><i class="bi bi-star-fill text-warning"></i> <strong>Unlimited Enhancements</strong></li><li><i class="bi bi-shield-check text-info"></i> <strong>Lifetime Support</strong></li><li><i class="bi bi-headset text-success"></i> Dedicated Manager</li></ul><a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20the%20Enterprise%20Package." class="btn btn-danger w-100 mt-3" target="_blank"><i class="bi bi-whatsapp"></i> Contact Us</a></div></div></div></div></section>
+    <section id="technologies" class="py-5"><div class="container"><h2 class="section-title text-center">Technologies We Use</h2><div class="row g-4 mt-4"><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-braces fs-1 text-primary"></i><h5 class="fw-bold mt-3">Angular</h5><p>Enterprise applications</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-lightning-fill fs-1 text-info"></i><h5 class="fw-bold mt-3">React</h5><p>Fast SPA applications</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-cpu-fill fs-1 text-dark"></i><h5 class="fw-bold mt-3">.NET Core</h5><p>High-performance APIs</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-database-fill fs-1 text-success"></i><h5 class="fw-bold mt-3">SQL / Firebase</h5><p>Secure databases</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-cloud-fill fs-1 text-primary"></i><h5 class="fw-bold mt-3">AWS</h5><p>Cloud infrastructure</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-github fs-1 text-dark"></i><h5 class="fw-bold mt-3">Git & GitHub</h5><p>Version control</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-bootstrap-fill fs-1" style="color: #7952b3;"></i><h5 class="fw-bold mt-3">Bootstrap</h5><p>Responsive UI</p></div></div><div class="col-lg-3 col-md-6 col-sm-6"><div class="glass-card"><i class="bi bi-file-code-fill fs-1 text-warning"></i><h5 class="fw-bold mt-3">Node.js</h5><p>Server-side JS</p></div></div></div></div></section>
+    <section id="contact" class="py-5" style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.05) 0%, rgba(13, 110, 253, 0.05) 100%);"><div class="container"><h2 class="section-title text-center">Get In Touch</h2><div class="row g-4 mt-4"><div class="col-md-4"><div class="glass-card"><i class="bi bi-envelope-fill fs-1 text-primary"></i><h5 class="fw-bold mt-3">Email</h5><a href="mailto:ramana9000r@gmail.com" style="text-decoration: none; color: var(--secondary); font-weight: 500;">ramana9000r@gmail.com</a></div></div><div class="col-md-4"><div class="glass-card"><i class="bi bi-telephone-fill fs-1 text-success"></i><h5 class="fw-bold mt-3">Phone</h5><a href="tel:+918179479516" style="text-decoration: none; color: var(--secondary); font-weight: 500;">+91 8179479516</a></div></div><div class="col-md-4"><div class="glass-card"><i class="bi bi-geo-alt-fill fs-1 text-danger"></i><h5 class="fw-bold mt-3">Location</h5><p style="color: var(--secondary); font-weight: 500;">India</p></div></div></div></div></section>
+    <footer><div class="container py-4"><div class="row g-4 mb-4"><div class="col-md-3 col-sm-6"><div class="footer-section"><h6><i class="bi bi-code-slash"></i> RDMWebTech</h6><p style="font-size: 0.9rem; color: var(--footer-text);">Modern web solutions for your business growth.</p></div></div><div class="col-md-3 col-sm-6"><div class="footer-section"><h6><i class="bi bi-link-45deg"></i> Quick Links</h6><ul><li><a href="" data-target="services"><i class="bi bi-arrow-right"></i> Services</a></li><li><a href="" data-target="pricing"><i class="bi bi-arrow-right"></i> Pricing</a></li><li><a href="" data-target="about"><i class="bi bi-arrow-right"></i> About</a></li></ul></div></div><div class="col-md-3 col-sm-6"><div class="footer-section"><h6><i class="bi bi-telephone"></i> Contact</h6><ul><li><a href="tel:+918179479516"><i class="bi bi-telephone"></i> +91 8179479516</a></li><li><a href="mailto:ramana9000r@gmail.com"><i class="bi bi-envelope"></i> Email Us</a></li></ul></div></div><div class="col-md-3 col-sm-6"><div class="footer-section"><h6><i class="bi bi-share"></i> Follow Us</h6><ul><li><a href="https://wa.me/918179479516" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a></li><li><a href="https://github.com" target="_blank"><i class="bi bi-github"></i> GitHub</a></li></ul></div></div></div><div class="footer-bottom"><p class="mb-2"><strong> 2025 RDMWebTech.com. All Rights Reserved.</strong></p><p style="font-size: 0.85rem;">We deliver modern, secure, and scalable web applications for your business growth.</p></div></div></footer>
+    <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20web%20development%20services." class="whatsapp-btn" target="_blank" title="Chat with us on WhatsApp"><i class="bi bi-whatsapp"></i></a>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('a[data-target]').forEach(link => { link.addEventListener('click', function (e) { e.preventDefault(); const id = this.getAttribute('data-target'); const target = document.getElementById(id); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+        const body = document.body; const themeBtn = document.getElementById("themeBtn"); const themeIcon = document.getElementById("themeIcon");
+        if (localStorage.getItem("theme") === "dark") { body.classList.add("dark-mode"); themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill"); }
+        themeBtn.addEventListener("click", () => { body.classList.toggle("dark-mode"); if (body.classList.contains("dark-mode")) { themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill"); localStorage.setItem("theme", "dark"); } else { themeIcon.classList.replace("bi-sun-fill", "bi-moon-stars-fill"); localStorage.setItem("theme", "light"); } });
+    </script>
 </body>
-
 </html>
