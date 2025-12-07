@@ -45,13 +45,13 @@
             --light-color: #f8f9fa;
             --white: #ffffff;
             
-            --bg-light: #f5f7fa;
+            --bg-light: #ffffff;
             --bg-dark: #0a0e27;
-            --card-light: #ffffff;
+            --card-light: #f8f9fa;
             --card-dark: #1a2332;
             --text-light: #212529;
             --text-dark: #e9ecef;
-            --border-light: #dee2e6;
+            --border-light: #e9ecef;
             --border-dark: #495057;
             
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -120,12 +120,11 @@
         /* ============ NAVBAR ============ */
         .navbar-custom {
             background: linear-gradient(135deg, #0f1419 0%, #1a2635 100%);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
-            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 0.8rem 0;
         }
@@ -164,12 +163,12 @@
 
         .nav-link:hover {
             color: var(--primary-color) !important;
-            background: rgba(13, 110, 253, 0.1);
+            background: rgba(13, 110, 253, 0.2);
         }
 
         .nav-link.active {
             color: var(--primary-color) !important;
-            background: rgba(13, 110, 253, 0.15);
+            background: rgba(13, 110, 253, 0.25);
             border-bottom: 3px solid var(--primary-color);
         }
 
@@ -190,7 +189,6 @@
 
         .offcanvas {
             background: linear-gradient(135deg, #0f1419 0%, #1a2635 100%) !important;
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -322,15 +320,15 @@
 
         /* ============ HERO SECTION ============ */
         .hero-section {
-            background: linear-gradient(135deg, var(--bg-light) 0%, rgba(13, 110, 253, 0.08) 100%);
-            padding: 120px 20px 80px;
+            background: #ffffff;
+            padding: 60px 20px 50px;
             margin-top: 80px;
             position: relative;
             overflow: hidden;
         }
 
         body.dark-mode .hero-section {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, rgba(13, 110, 253, 0.05) 100%);
+            background: var(--bg-dark);
         }
 
         .hero-section::before {
@@ -352,10 +350,10 @@
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
             background: linear-gradient(135deg, var(--text-light), #0d6efd);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -369,42 +367,49 @@
         }
 
         .hero-content p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--secondary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             max-width: 600px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .discount-badge {
             display: inline-block;
             background: linear-gradient(135deg, #dc3545, #ff6b6b);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 50px;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
             animation: pulse-glow 2s ease-in-out infinite;
             box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
             margin-top: 2.5rem;
+            justify-content: center;
+            align-items: center;
         }
 
         .btn-custom {
-            padding: 0.9rem 2rem;
+            padding: 0.7rem 1.5rem;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: var(--transition);
             border: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            font-size: 1rem;
+            gap: 0.5rem;
+            font-size: 0.95rem;
             box-shadow: var(--shadow-md);
+            white-space: nowrap;
         }
 
         .btn-primary-custom {
@@ -451,12 +456,32 @@
             }
 
             .cta-buttons {
-                flex-direction: column;
+                gap: 0.8rem;
             }
 
             .btn-custom {
-                width: 100%;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-section {
+                padding: 90px 15px 50px;
+            }
+
+            .cta-buttons {
+                gap: 0.6rem;
                 justify-content: center;
+            }
+
+            .btn-custom {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
             }
         }
 
@@ -510,14 +535,14 @@
 
         /* ============ SECTIONS ============ */
         section {
-            padding: 5rem 0;
+            padding: 3rem 0;
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 800;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             position: relative;
             display: inline-block;
             width: 100%;
@@ -536,35 +561,35 @@
         .section-subtitle {
             text-align: center;
             color: var(--secondary-color);
-            font-size: 1.1rem;
-            margin-bottom: 3.5rem;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .section-divider {
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: linear-gradient(135deg, var(--primary-color), var(--info-color));
-            margin: 1.5rem auto 0;
+            margin: 0.8rem auto 0;
             border-radius: 2px;
         }
 
         #about-section {
-            background: linear-gradient(135deg, rgba(13, 110, 253, 0.05) 0%, rgba(13, 202, 240, 0.05) 100%);
+            background: #ffffff;
         }
 
         body.dark-mode #about-section {
-            background: linear-gradient(135deg, rgba(13, 110, 253, 0.02) 0%, rgba(13, 202, 240, 0.02) 100%);
+            background: var(--bg-dark);
         }
 
         #pricing-section {
-            background: linear-gradient(135deg, rgba(25, 135, 84, 0.05) 0%, rgba(13, 110, 253, 0.05) 100%);
+            background: #ffffff;
         }
 
         body.dark-mode #pricing-section {
-            background: linear-gradient(135deg, rgba(25, 135, 84, 0.02) 0%, rgba(13, 110, 253, 0.02) 100%);
+            background: var(--bg-dark);
         }
 
         /* ============ PRICING CARDS ============ */
@@ -653,6 +678,18 @@
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        footer h5 i {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        footer p {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
         footer ul {
@@ -665,17 +702,37 @@
         }
 
         footer a {
-            color: var(--text-dark);
+            color: #cbd5e0;
             text-decoration: none;
             transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 0.6rem;
+            font-size: 0.95rem;
         }
 
         footer a:hover {
             color: var(--primary-color);
             transform: translateX(5px);
+        }
+
+        footer a i {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #cbd5e0;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #cbd5e0;
         }
 
         .footer-bottom {
@@ -731,11 +788,11 @@
             }
 
             section {
-                padding: 4rem 0;
+                padding: 2.5rem 0;
             }
 
             .section-title {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
         }
 
@@ -749,11 +806,16 @@
             }
 
             section {
-                padding: 3rem 0;
+                padding: 2rem 0;
             }
 
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
             }
 
             .card-custom {
@@ -775,11 +837,16 @@
             }
 
             section {
-                padding: 2.5rem 0;
+                padding: 1.5rem 0;
             }
 
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.85rem;
+                margin-bottom: 1.2rem;
             }
 
             .hero-content h1 {
@@ -806,7 +873,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid px-3 px-md-4">
-            <a class="navbar-brand" href="#home">
+            <a class="navbar-brand">
                  RDMWebTech
             </a>
 
@@ -856,7 +923,7 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarMenu">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">
-                <i class="bi bi-code-square"></i> RDMWebTech
+                 RDMWebTech
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -1229,28 +1296,57 @@
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Smooth scroll function
+        // Fixed smooth scroll function with proper event handling
         function smoothScroll(id) {
-            event.preventDefault();
+            if (event) {
+                event.preventDefault();
+            }
             const element = document.getElementById(id);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Close mobile menu if open
+                const offcanvas = document.getElementById('navbarMenu');
+                if (offcanvas) {
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                    if (bsOffcanvas) {
+                        bsOffcanvas.hide();
+                    }
+                }
+                
+                // Smooth scroll with delay to ensure menu closes
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             }
         }
+
+        // Handle all nav link clicks - both desktop and mobile
+        document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                smoothScroll(targetId);
+            });
+        });
 
         // Active nav link on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
 
+            let currentSection = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop - 150;
                 const sectionHeight = section.clientHeight;
                 
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    const activeLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
-                    if (activeLink) activeLink.classList.add('active');
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
                 }
             });
         });
@@ -1267,6 +1363,16 @@
         }, { threshold: 0.1 });
 
         cards.forEach(card => observer.observe(card));
+
+        // Close canvas menu when clicking on canvas overlay
+        const offcanvas = document.getElementById('navbarMenu');
+        if (offcanvas) {
+            offcanvas.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    bootstrap.Offcanvas.getInstance(this)?.hide();
+                }
+            });
+        }
     </script>
 </body>
 </html>
