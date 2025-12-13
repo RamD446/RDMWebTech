@@ -205,6 +205,8 @@
             font-size: 0.95rem;
         }
 
+
+
         .navbar-custom .nav-link .bi {
             color: #212529;
             font-size: 1rem;
@@ -954,11 +956,11 @@
                RDMWebTech
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse d-lg-flex justify-content-end">
+            <div id="navbarMenu" class="collapse navbar-collapse d-lg-flex justify-content-end">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" href="#home" onclick="smoothScroll('home')">
@@ -991,67 +993,13 @@
                         </a>
                     </li>
                 </ul>
-                <div class="d-flex align-items-center ms-3">
-                    <button class="btn btn-sm btn-dark support-btn d-none d-lg-inline-flex" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact Support">
-                        <i class="bi bi-telephone-fill"></i>
-                    </button>
-                </div>
+                <div class="d-flex align-items-center ms-3"></div>
             </div>
 
         </div>
     </nav>
 
-    <!-- MOBILE MENU -->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarMenu">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title">
-                 RDMWebTech
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="mb-3">
-                <a class="d-flex align-items-center text-dark" href="tel:+918179479516" style="text-decoration:none;">
-                    <i class="bi bi-telephone-fill me-2"></i> +91 817-947-9516
-                </a>
-                <a class="d-flex align-items-center text-dark mt-2" href="https://wa.me/918179479516" target="_blank" style="text-decoration:none;">
-                    <i class="bi bi-whatsapp me-2"></i> WhatsApp +91 817-947-9516
-                </a>
-            </div>
-            <ul class="navbar-nav flex-column gap-2 w-100">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home" data-bs-dismiss="offcanvas" onclick="smoothScroll('home')">
-                        <i class="bi bi-house-fill"></i> Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about-section" data-bs-dismiss="offcanvas" onclick="smoothScroll('about-section')">
-                        <i class="bi bi-info-circle-fill"></i> About
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#services" data-bs-dismiss="offcanvas" onclick="smoothScroll('services')">
-                        <i class="bi bi-briefcase-fill"></i> Services
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#pricing-section" data-bs-dismiss="offcanvas" onclick="smoothScroll('pricing-section')">
-                        <i class="bi bi-tag-fill"></i> Pricing
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#tech" data-bs-dismiss="offcanvas" onclick="smoothScroll('tech')">
-                        <i class="bi bi-cpu-fill"></i> Technologies
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact" data-bs-dismiss="offcanvas" onclick="smoothScroll('contact')">
-                        <i class="bi bi-telephone-fill"></i> Contact
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+
 
     <!-- HERO SECTION -->
     <section id="home" class="hero-section">
@@ -1308,58 +1256,9 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="contact-section">
-        <div class="container-fluid">
-            <div class="row g-4 mt-3">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card-custom text-center">
-                        <i class="bi bi-envelope-fill card-icon text-primary"></i>
-                        <h4>Email</h4>
-                        <a href="mailto:ramana9000r@gmail.com" style="color: var(--secondary-color); text-decoration: none;">
-                            ramana9000r@gmail.com
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card-custom text-center">
-                        <i class="bi bi-telephone-fill card-icon text-success"></i>
-                        <h4>Phone</h4>
-                        <a href="tel:+918179479516" style="color: var(--secondary-color); text-decoration: none;">
-                            +91 817-947-9516
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card-custom text-center">
-                        <i class="bi bi-geo-alt-fill card-icon text-danger"></i>
-                        <h4>Location</h4>
-                        <p style="color: var(--secondary-color);">India</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT MODAL -->
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="contactModalLabel">Contact Support</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="mb-3">Call or WhatsApp us:</p>
-                    <a class="btn btn-primary mb-2 d-block" href="tel:+918179479516"><i class="bi bi-telephone-fill me-2"></i>Call +91 817-947-9516</a>
-                    <a class="btn btn-success d-block" href="https://wa.me/918179479516" target="_blank"><i class="bi bi-whatsapp me-2"></i>WhatsApp +91 817-947-9516</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
+  
     <footer>
-        <div class="container py-5">
+        <div class="container py-5 "id="contact">
             <div class="row g-4 mb-4">
                 <div class="col-md-3 col-sm-6">
                     <h5><i class="bi bi-code-square"></i> RDMWebTech</h5>
@@ -1410,12 +1309,15 @@
             }
             const element = document.getElementById(id);
             if (element) {
-                // Close mobile menu if open
-                const offcanvas = document.getElementById('navbarMenu');
-                if (offcanvas) {
-                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
-                    if (bsOffcanvas) {
-                        bsOffcanvas.hide();
+                // Close mobile menu if open (handle offcanvas or collapse)
+                const navMenuElem = document.getElementById('navbarMenu');
+                if (navMenuElem) {
+                    if (navMenuElem.classList.contains('offcanvas')) {
+                        const bsOffcanvas = bootstrap.Offcanvas.getInstance(navMenuElem);
+                        if (bsOffcanvas) bsOffcanvas.hide();
+                    } else if (navMenuElem.classList.contains('collapse')) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navMenuElem);
+                        if (bsCollapse) bsCollapse.hide();
                     }
                 }
                 
@@ -1471,15 +1373,7 @@
 
         cards.forEach(card => observer.observe(card));
 
-        // Close canvas menu when clicking on canvas overlay
-        const offcanvas = document.getElementById('navbarMenu');
-        if (offcanvas) {
-            offcanvas.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    bootstrap.Offcanvas.getInstance(this)?.hide();
-                }
-            });
-        }
+
     </script>
 </body>
 </html>
