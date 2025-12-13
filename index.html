@@ -218,12 +218,10 @@
         .offcanvas-header {
             border-bottom: 1px solid #e9ecef;
             padding: 1rem;
-            color: #212529;
         }
 
         .offcanvas-body {
             padding: 1rem;
-            color: #212529;
         }
 
         .offcanvas .btn-close {
@@ -361,52 +359,7 @@
             transform: translateX(40%);
         }
 
-        .hero-figure {
-            width: 420px;
-            height: 320px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, rgba(13,110,253,0.12), rgba(220,53,69,0.08));
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-            position: relative;
-            border: 1px solid rgba(255,255,255,0.04);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .hero-figure .mock-phone {
-            width: 66%;
-            height: 78%;
-            border-radius: 12px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-        }
-
-        .hero-figure .mock-phone::after {
-            content: '';
-            width: 60%;
-            height: 64%;
-            display: block;
-            margin: 6% auto;
-            border-radius: 8px;
-            background: linear-gradient(90deg, rgba(13,110,253,0.85), rgba(13,110,253,0.45));
-        }
-
-        .hero-figure::after {
-            content: '';
-            position: absolute;
-            left: -40px;
-            top: -40px;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255,255,255,0.03), transparent 60%);
-            border-radius: 50%;
-            filter: blur(24px);
-            transform: rotate(15deg);
-            opacity: 0.8;
-        }
 
         @keyframes float-up {
             from { transform: translateY(12px); opacity: 0; }
@@ -417,14 +370,7 @@
             position: relative;
             z-index: 2;
             animation: float-up 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) both;
-        }
-
-        /* Minimal maintenance area */
-        .maintenance-section {
-            background: #000000;
-            color: #ffffff;
-            min-height: calc(100vh - 72px);
-            padding-top: 48px;
+            text-align: center;
         }
 
         .hero-content h1 {
@@ -440,6 +386,7 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: bg-slide 6s linear infinite;
+            text-align: center;
         }
 
         @keyframes bg-slide {
@@ -480,6 +427,7 @@
             position: relative;
             z-index: 2;
             animation: fadeInUp 0.8s ease-out;
+            text-align: center;
         }
 
         .hero-content h1 {
@@ -488,6 +436,7 @@
             line-height: 1.2;
             margin-bottom: 0.8rem;
             color: #ffffff;
+            text-align: center;
         }
 
         body.dark-mode .hero-content h1 {
@@ -511,7 +460,7 @@
             padding: 0.6rem 1.2rem;
             border-radius: 50px;
             font-weight: 700;
-            margin-bottom: 0.8rem;
+            margin: 0.2rem auto 0.8rem auto;
             font-size: 0.9rem;
             animation: pulse-glow 2s ease-in-out infinite;
             box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
@@ -594,7 +543,7 @@
                 font-size: 0.85rem;
             }
 
-            .hero-figure { width: 300px; height: 220px; }
+
         }
 
         @media (max-width: 576px) {
@@ -999,35 +948,538 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-custom">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid px-3 px-md-4 d-flex align-items-center">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-code-square"></i> RDMWebTech
+            <a class="navbar-brand" href="#home" onclick="smoothScroll('home')">
+               RDMWebTech
             </a>
-            <div class="ms-auto d-flex align-items-center gap-2">
-                <a class="btn btn-sm btn-outline-dark support-link" href="tel:+918179479516" aria-label="Call">
-                    <i class="bi bi-telephone-fill"></i>
-                </a>
-                <a class="btn btn-sm btn-success" href="https://wa.me/918179479516" aria-label="WhatsApp">
-                    <i class="bi bi-whatsapp"></i>
-                </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse d-lg-flex justify-content-end">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" onclick="smoothScroll('home')">
+                            <i class="bi bi-house-fill"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section" onclick="smoothScroll('about-section')">
+                            <i class="bi bi-info-circle-fill"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" onclick="smoothScroll('services')">
+                            <i class="bi bi-briefcase-fill"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing-section" onclick="smoothScroll('pricing-section')">
+                            <i class="bi bi-tag-fill"></i> Pricing
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tech" onclick="smoothScroll('tech')">
+                            <i class="bi bi-cpu-fill"></i> Technologies
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" onclick="smoothScroll('contact')">
+                            <i class="bi bi-telephone-fill"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center ms-3">
+                    <button class="btn btn-sm btn-dark support-btn d-none d-lg-inline-flex" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Contact Support">
+                        <i class="bi bi-telephone-fill"></i>
+                    </button>
+                </div>
             </div>
+
         </div>
     </nav>
 
-    <!-- MAINTENANCE / CONTACT -->
-    <main class="maintenance-section" role="main">
-        <div class="container-fluid py-5 text-center">
-            <h2 style="color: #ffffff; font-weight:800;">Site Under Maintenance</h2>
-            <p style="color: #adb5bd;">We are currently working on the website. To contact the site owner please use the options in the header.</p>
-            <div class="d-flex justify-content-center gap-3 mt-3">
-                <a class="btn btn-dark" href="tel:+918179479516"><i class="bi bi-telephone-fill me-2"></i>Call +91 817-947-9516</a>
-                <a class="btn btn-success" href="https://wa.me/918179479516"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+    <!-- MOBILE MENU -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                 RDMWebTech
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="mb-3">
+                <a class="d-flex align-items-center text-dark" href="tel:+918179479516" style="text-decoration:none;">
+                    <i class="bi bi-telephone-fill me-2"></i> +91 817-947-9516
+                </a>
+                <a class="d-flex align-items-center text-dark mt-2" href="https://wa.me/918179479516" target="_blank" style="text-decoration:none;">
+                    <i class="bi bi-whatsapp me-2"></i> WhatsApp +91 817-947-9516
+                </a>
+            </div>
+            <ul class="navbar-nav flex-column gap-2 w-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home" data-bs-dismiss="offcanvas" onclick="smoothScroll('home')">
+                        <i class="bi bi-house-fill"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-section" data-bs-dismiss="offcanvas" onclick="smoothScroll('about-section')">
+                        <i class="bi bi-info-circle-fill"></i> About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services" data-bs-dismiss="offcanvas" onclick="smoothScroll('services')">
+                        <i class="bi bi-briefcase-fill"></i> Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing-section" data-bs-dismiss="offcanvas" onclick="smoothScroll('pricing-section')">
+                        <i class="bi bi-tag-fill"></i> Pricing
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tech" data-bs-dismiss="offcanvas" onclick="smoothScroll('tech')">
+                        <i class="bi bi-cpu-fill"></i> Technologies
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" data-bs-dismiss="offcanvas" onclick="smoothScroll('contact')">
+                        <i class="bi bi-telephone-fill"></i> Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="hero-content text-center">
+                        <div class="discount-badge">
+                            <i class="bi bi-lightning-fill"></i> ₹5,000 OFF - 24 Hours Only!
+                        </div>
+                        <h1>
+                            Modern Web Solutions
+                        </h1>
+                        <p class="mt-3 mb-4">
+                            Fast, scalable & secure. Custom web development for your business.
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20want%20to%20claim%20the%20discount" class="btn-custom btn-warning-custom" target="_blank">
+                                <i class="bi bi-whatsapp"></i> Claim Discount
+                            </a>
+                            <a href="#services" class="btn-custom btn-primary-custom" onclick="smoothScroll('services')">
+                                <i class="bi bi-arrow-right"></i> Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about-section" class="about-section">
+        <div class="container-fluid">
+            <h2 class="section-title">About RDMWebTech</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Trusted Partner for Modern Web Solutions</p>
+
+            <div class="row g-4 mt-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-rocket-takeoff card-icon text-primary"></i>
+                        <h4>4+ Years</h4>
+                        <p>Professional web development experience serving diverse industries</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-briefcase-fill card-icon text-success"></i>
+                        <h4>50+ Projects</h4>
+                        <p>Successfully delivered web applications for startups and enterprises</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-people-fill card-icon text-info"></i>
+                        <h4>100% Satisfaction</h4>
+                        <p>Dedicated to client success with 24/7 support and maintenance</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-shield-check card-icon text-danger"></i>
+                        <h4>Certified Team</h4>
+                        <p>Expert developers certified in latest technologies and frameworks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Our Services</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Comprehensive Web Solutions</p>
+
+            <div class="row g-4 mt-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom">
+                        <i class="bi bi-window card-icon text-primary"></i>
+                        <h4>Web Development</h4>
+                        <p>Custom websites and web applications tailored to your business needs</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom">
+                        <i class="bi bi-cart-fill card-icon text-success"></i>
+                        <h4>E-Commerce Solutions</h4>
+                        <p>Secure online stores with payment gateway integration</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom">
+                        <i class="bi bi-basket-fill card-icon text-warning"></i>
+                        <h4>Food Ordering Apps</h4>
+                        <p>Restaurant management and delivery tracking systems</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom">
+                        <i class="bi bi-receipt card-icon text-danger"></i>
+                        <h4>Billing Systems</h4>
+                        <p>Professional invoicing and payment solution platforms</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom">
+                        <i class="bi bi-building card-icon text-info"></i>
+                        <h4>Enterprise Applications</h4>
+                        <p>ERP and business management systems for corporations</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom">
+                        <i class="bi bi-chat-dots-fill card-icon text-success"></i>
+                        <h4>Real-Time Chat</h4>
+                        <p>Communication platforms with live messaging capabilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing-section" class="pricing-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Pricing Plans</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Choose the Perfect Plan for Your Project</p>
+
+            <div class="row g-3 mt-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="pricing-simple">
+                        <h4><i class="bi bi-box"></i> Basic</h4>
+                        <p class="price">₹25,000</p>
+                        <ul>
+                            <li><i class="bi bi-check"></i> 3 Pages</li>
+                            <li><i class="bi bi-check"></i> Responsive</li>
+                            <li><i class="bi bi-check"></i> SEO Ready</li>
+                            <li><i class="bi bi-check"></i> 3 Enhancements</li>
+                            <li><i class="bi bi-check"></i> 2 Years Warranty</li>
+                        </ul>
+                        <a href="https://wa.me/918179479516?text=Interested%20in%20Basic%20package" class="btn-simple" target="_blank">
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pricing-simple featured">
+                        <span class="badge">Popular</span>
+                        <h4><i class="bi bi-gift"></i> Premium</h4>
+                        <p class="price">₹50,000</p>
+                        <ul>
+                            <li><i class="bi bi-check"></i> 8 Pages</li>
+                            <li><i class="bi bi-check"></i> E-Commerce</li>
+                            <li><i class="bi bi-check"></i> Database</li>
+                            <li><i class="bi bi-check"></i> 5 Enhancements</li>
+                            <li><i class="bi bi-check"></i> 1 Year Support</li>
+                        </ul>
+                        <a href="https://wa.me/918179479516?text=Interested%20in%20Premium%20package" class="btn-simple" target="_blank">
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="pricing-simple">
+                        <h4><i class="bi bi-rocket"></i> Enterprise</h4>
+                        <p class="price">Custom</p>
+                        <ul>
+                            <li><i class="bi bi-check"></i> Unlimited Pages</li>
+                            <li><i class="bi bi-check"></i> Full Custom</li>
+                            <li><i class="bi bi-check"></i> API Integration</li>
+                            <li><i class="bi bi-check"></i> Unlimited Changes</li>
+                            <li><i class="bi bi-check"></i> Lifetime Support</li>
+                        </ul>
+                        <a href="https://wa.me/918179479516?text=Interested%20in%20Enterprise%20package" class="btn-simple" target="_blank">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIES SECTION -->
+    <section id="tech" class="tech-section">
+        <div class="container-fluid">
+            <h2 class="section-title">Technologies & Tools</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Latest & Most Reliable Technologies</p>
+
+            <div class="row g-4 mt-5">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-braces card-icon text-primary"></i>
+                        <h4>Angular</h4>
+                        <p>Enterprise-level framework for scalable applications</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-lightning-fill card-icon text-info"></i>
+                        <h4>React</h4>
+                        <p>Fast and interactive single page applications</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-cpu-fill card-icon text-success"></i>
+                        <h4>.NET Core</h4>
+                        <p>High-performance backend and API development</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-database-fill card-icon text-danger"></i>
+                        <h4>Firebase</h4>
+                        <p>Real-time database and backend services</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-cloud-fill card-icon text-warning"></i>
+                        <h4>AWS</h4>
+                        <p>Cloud infrastructure and deployment services</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-github card-icon text-dark"></i>
+                        <h4>Git</h4>
+                        <p>Version control and collaboration platform</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-bootstrap-fill card-icon" style="color: #7952b3;"></i>
+                        <h4>Bootstrap</h4>
+                        <p>Responsive UI framework for web design</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card-custom">
+                        <i class="bi bi-file-code-fill card-icon text-success"></i>
+                        <h4>Node.js</h4>
+                        <p>JavaScript runtime for server-side applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container-fluid">
+            <div class="row g-4 mt-3">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-envelope-fill card-icon text-primary"></i>
+                        <h4>Email</h4>
+                        <a href="mailto:ramana9000r@gmail.com" style="color: var(--secondary-color); text-decoration: none;">
+                            ramana9000r@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-telephone-fill card-icon text-success"></i>
+                        <h4>Phone</h4>
+                        <a href="tel:+918179479516" style="color: var(--secondary-color); text-decoration: none;">
+                            +91 817-947-9516
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-custom text-center">
+                        <i class="bi bi-geo-alt-fill card-icon text-danger"></i>
+                        <h4>Location</h4>
+                        <p style="color: var(--secondary-color);">India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Support</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="mb-3">Call or WhatsApp us:</p>
+                    <a class="btn btn-primary mb-2 d-block" href="tel:+918179479516"><i class="bi bi-telephone-fill me-2"></i>Call +91 817-947-9516</a>
+                    <a class="btn btn-success d-block" href="https://wa.me/918179479516" target="_blank"><i class="bi bi-whatsapp me-2"></i>WhatsApp +91 817-947-9516</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container py-5">
+            <div class="row g-4 mb-4">
+                <div class="col-md-3 col-sm-6">
+                    <h5><i class="bi bi-code-square"></i> RDMWebTech</h5>
+                    <p style="font-size: 0.9rem;">Modern web solutions transforming businesses through innovative technology and expert development.</p>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h5><i class="bi bi-link-45deg"></i> Quick Links</h5>
+                    <ul>
+                        <li><a href="#services" onclick="smoothScroll('services')"><i class="bi bi-arrow-right"></i> Services</a></li>
+                        <li><a href="#pricing-section" onclick="smoothScroll('pricing-section')"><i class="bi bi-arrow-right"></i> Pricing</a></li>
+                        <li><a href="#tech" onclick="smoothScroll('tech')"><i class="bi bi-arrow-right"></i> Technologies</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h5><i class="bi bi-telephone-fill"></i> Contact</h5>
+                    <ul>
+                        <li><a href="tel:+918179479516"><i class="bi bi-telephone"></i> +91 817-947-9516</a></li>
+                        <li><a href="mailto:ramana9000r@gmail.com"><i class="bi bi-envelope"></i> Email</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <h5><i class="bi bi-share"></i> Follow Us</h5>
+                    <ul>
+                        <li><a href="https://wa.me/918179479516" target="_blank"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+                    
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-2"><strong>© 2025 RDMWebTech. All Rights Reserved.</strong></p>
+                <p style="font-size: 0.85rem;">Delivering modern, secure, and scalable web applications for business growth.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FAB -->
+    <a href="https://wa.me/918179479516?text=Hello%20RDMWebTech%2C%20I%20am%20interested%20in%20your%20services" class="whatsapp-fab" title="Chat on WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fixed smooth scroll function with proper event handling
+        function smoothScroll(id) {
+            if (event) {
+                event.preventDefault();
+            }
+            const element = document.getElementById(id);
+            if (element) {
+                // Close mobile menu if open
+                const offcanvas = document.getElementById('navbarMenu');
+                if (offcanvas) {
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvas);
+                    if (bsOffcanvas) {
+                        bsOffcanvas.hide();
+                    }
+                }
+                
+                // Smooth scroll with delay to ensure menu closes
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+
+        // Handle all nav link clicks - both desktop and mobile
+        document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                smoothScroll(targetId);
+            });
+        });
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animations on scroll
+        const cards = document.querySelectorAll('.card-custom, .pricing-simple');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => observer.observe(card));
+
+        // Close canvas menu when clicking on canvas overlay
+        const offcanvas = document.getElementById('navbarMenu');
+        if (offcanvas) {
+            offcanvas.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    bootstrap.Offcanvas.getInstance(this)?.hide();
+                }
+            });
+        }
+    </script>
 </body>
 </html>
