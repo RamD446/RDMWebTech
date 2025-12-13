@@ -120,38 +120,34 @@
 
         /* ============ NAVBAR ============ */
         .navbar-custom {
-            background: linear-gradient(135deg, #0f1419 0%, #1a2635 100%);
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1030;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #e9ecef;
             padding: 0.8rem 0;
         }
 
         .navbar-brand {
             font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 900;
+            color: #000000;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-decoration: none;
         }
 
         .navbar-brand i {
-            font-size: 1.8rem;
-            background: linear-gradient(135deg, #0d6efd, #0dcaf0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.6rem;
+            color: var(--primary-color);
         }
 
         .nav-link {
-            color: #cbd5e0 !important;
-            font-weight: 500;
+            color: #212529 !important;
+            font-weight: 700;
             font-size: 0.95rem;
             padding: 0.5rem 1rem !important;
             margin: 0 0.3rem;
@@ -164,46 +160,72 @@
 
         .nav-link:hover {
             color: var(--primary-color) !important;
-            background: rgba(13, 110, 253, 0.2);
+            background: rgba(13, 110, 253, 0.05);
         }
 
         .nav-link.active {
             color: var(--primary-color) !important;
-            background: rgba(13, 110, 253, 0.25);
+            background: rgba(13, 110, 253, 0.08);
             border-bottom: 3px solid var(--primary-color);
         }
 
         .navbar-toggler {
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid #212529;
             padding: 0.4rem 0.7rem;
             border-radius: 6px;
         }
 
         .navbar-toggler:focus {
-            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.12);
             outline: none;
         }
 
         .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23212529' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .support-btn {
+            color: #000 !important;
+            border: 1px solid rgba(0,0,0,0.08) !important;
+            background: transparent !important;
+            padding: 0.35rem 0.45rem !important;
+            border-radius: 6px !important;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .support-btn:focus, .support-btn:active {
+            box-shadow: 0 0 0 0.15rem rgba(13,110,253,0.08);
+            outline: none;
+        }
+
+        .support-btn .bi {
+            color: #000;
+            font-size: 0.95rem;
+        }
+
+        .navbar-custom .nav-link .bi {
+            color: #212529;
+            font-size: 1rem;
         }
 
         .offcanvas {
-            background: linear-gradient(135deg, #0f1419 0%, #1a2635 100%) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff !important;
+            border: 1px solid #e9ecef;
         }
 
         .offcanvas-header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+            padding: 1rem;
         }
 
         .offcanvas-body {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .offcanvas .btn-close {
-            filter: invert(1) brightness(1.2);
+            filter: none;
         }
 
         .theme-toggle {
@@ -868,9 +890,21 @@
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid px-3 px-md-4">
-            <a class="navbar-brand">
-                 RDMWebTech
+        <div class="container-fluid px-3 px-md-4 d-flex align-items-center">
+            <div class="me-2 d-flex align-items-center">
+                <div class="dropdown">
+                    <a class="btn btn-sm btn-outline-dark dropdown-toggle support-btn" href="#" role="button" id="contactSupportBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-telephone-fill"></i>
+                    </a>
+                    <ul class="dropdown-menu p-2 shadow" aria-labelledby="contactSupportBtn">
+                        <li><a class="dropdown-item" href="tel:+918179479516"><i class="bi bi-telephone-fill me-2"></i>Call +91 817-947-9516</a></li>
+                        <li><a class="dropdown-item" href="https://wa.me/918179479516" target="_blank"><i class="bi bi-whatsapp me-2"></i>WhatsApp +91 817-947-9516</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <a class="navbar-brand" href="#home" onclick="smoothScroll('home')">
+                <i class="bi bi-code-square"></i> RDMWebTech
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
@@ -924,6 +958,14 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+            <div class="mb-3">
+                <a class="d-flex align-items-center text-dark" href="tel:+918179479516" style="text-decoration:none;">
+                    <i class="bi bi-telephone-fill me-2"></i> +91 817-947-9516
+                </a>
+                <a class="d-flex align-items-center text-dark mt-2" href="https://wa.me/918179479516" target="_blank" style="text-decoration:none;">
+                    <i class="bi bi-whatsapp me-2"></i> WhatsApp +91 817-947-9516
+                </a>
+            </div>
             <ul class="navbar-nav flex-column gap-2 w-100">
                 <li class="nav-item">
                     <a class="nav-link" href="#home" data-bs-dismiss="offcanvas" onclick="smoothScroll('home')">
