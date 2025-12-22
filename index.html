@@ -87,72 +87,7 @@
             width: 100%;
         }
         
-        /* Hero Section */
-        .hero-section {
-            padding-top: 80px;
-            background: #f5f5f5;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #00b7ff;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            color: #4a4a4a;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-        
-        .hero-image {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .hero-image svg {
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 10px 30px rgba(0, 183, 255, 0.3));
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
+
         
         /* Buttons */
         .btn-primary-custom {
@@ -590,18 +525,6 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .hero-description {
-                font-size: 1rem;
-            }
-            
             .section-title {
                 font-size: 1.8rem;
             }
@@ -651,11 +574,9 @@
  <body><!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
    <div class="container"><!-- Mobile Layout: Brand left, Icons + Menu right --> <a class="navbar-brand order-0" href="#" id="navBrand">RDMWebTech</a> <!-- Mobile Icons (visible on mobile only) -->
-    <div class="d-lg-none d-flex align-items-center order-2"><button class="btn btn-primary-custom btn-sm me-2" id="contactPopupBtnMobile" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;"> <i class="fas fa-phone"></i> </button> <a href="https://wa.me/918179479516" target="_blank" rel="noopener noreferrer" class="me-2" style="color: #25d366; font-size: 1.5rem; text-decoration: none; transition: all 0.3s ease;" id="headerWhatsappMobile"> <i class="fab fa-whatsapp"></i> </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: 1px solid #00b7ff; padding: 0.5rem 0.75rem;"> <span style="color: #ffffff;"><i class="fas fa-bars"></i></span> </button>
-    </div><!-- Desktop Layout: Icons left, Menu right -->
-    <div class="collapse navbar-collapse order-3" id="navbarNav"><!-- Desktop Icons (visible on desktop only) -->
-     <div class="d-none d-lg-flex align-items-center me-4"><a href="https://wa.me/918179479516" target="_blank" rel="noopener noreferrer" class="me-3" style="color: #25d366; font-size: 1.8rem; text-decoration: none; transition: all 0.3s ease;" id="headerWhatsappDesktop"> <i class="fab fa-whatsapp"></i> </a> <button class="btn btn-primary-custom btn-sm" id="contactPopupBtnDesktop" style="padding: 0.5rem 1rem; font-size: 0.9rem;"> <i class="fas fa-phone me-1"></i>Contact </button>
-     </div><!-- Menu (moves to right on desktop, below on mobile) -->
+    <div class="d-lg-none d-flex align-items-center order-2"><button class="btn btn-primary-custom btn-sm me-2" id="contactPopupBtnMobile" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;"> <i class="fas fa-phone"></i> </button> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: 1px solid #00b7ff; padding: 0.5rem 0.75rem;"> <span style="color: #ffffff;"><i class="fas fa-bars"></i></span> </button>
+    </div><!-- Desktop Layout: Menu right -->
+    <div class="collapse navbar-collapse order-3" id="navbarNav"><!-- Menu (moves to right on desktop, below on mobile) -->
      <ul class="navbar-nav ms-lg-auto">
       <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -665,34 +586,8 @@
      </ul>
     </div>
    </div>
-  </nav><!-- Hero Section -->
-  <section class="hero-section" id="home">
-   <div class="container">
-    <div class="row align-items-center min-vh-100">
-     <div class="col-lg-6">
-      <div class="hero-content">
-       <h1 class="hero-title" id="heroTitle">Transform Your Digital Presence</h1>
-       <p class="hero-subtitle" id="heroSubtitle">Professional Web Development Solutions</p>
-       <p class="hero-description" id="heroDescription">We craft cutting-edge web applications and digital experiences that drive business growth and engage your audience.</p>
-       <div class="d-flex gap-3 mt-4 flex-wrap"><button class="btn btn-primary-custom">Get Started</button> <button class="btn btn-outline-custom">View Portfolio</button>
-       </div>
-      </div>
-     </div>
-     <div class="col-lg-6">
-      <div class="hero-image">
-       <svg viewbox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><defs>
-         <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#00b7ff;stop-opacity:1" />
-         </lineargradient>
-        </defs> <rect x="50" y="50" width="400" height="400" rx="20" fill="url(#grad1)" opacity="0.1" /> <rect x="100" y="150" width="300" height="200" rx="10" fill="url(#grad1)" opacity="0.3" /> <circle cx="250" cy="250" r="80" fill="url(#grad1)" /> <path d="M 200 250 L 230 280 L 300 210" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-       </svg>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- About Section -->
-  <section class="section" id="about">
+  </nav><!-- About Section -->
+  <section class="section" id="about" style="padding-top: 8rem;">
    <div class="container">
     <h2 class="section-title">Why Choose RDMWebTech?</h2>
     <p class="section-subtitle">Leading the way in innovative web solutions</p>
@@ -998,26 +893,13 @@
             phone_number: "+91 817-947-9516",
             email_address: "ramana9000r@gmail.com",
             whatsapp_number: "918179479516",
-            footer_text: "© 2024 RDMWebTech. All rights reserved.",
-            hero_title: "Transform Your Digital Presence",
-            hero_subtitle: "Professional Web Development Solutions",
-            hero_description: "We craft cutting-edge web applications and digital experiences that drive business growth and engage your audience."
+            footer_text: "© 2024 RDMWebTech. All rights reserved."
         };
         
         async function onConfigChange(config) {
             // Update company name
             const navBrand = document.getElementById('navBrand');
             if (navBrand) navBrand.textContent = config.company_name || defaultConfig.company_name;
-            
-            // Update hero section
-            const heroTitle = document.getElementById('heroTitle');
-            if (heroTitle) heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
-            
-            const heroSubtitle = document.getElementById('heroSubtitle');
-            if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
-            
-            const heroDescription = document.getElementById('heroDescription');
-            if (heroDescription) heroDescription.textContent = config.hero_description || defaultConfig.hero_description;
             
             // Update footer
             const footerEmail = document.getElementById('footerEmail');
@@ -1033,9 +915,6 @@
         function mapToEditPanelValues(config) {
             return new Map([
                 ["company_name", config.company_name || defaultConfig.company_name],
-                ["hero_title", config.hero_title || defaultConfig.hero_title],
-                ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
-                ["hero_description", config.hero_description || defaultConfig.hero_description],
                 ["phone_number", config.phone_number || defaultConfig.phone_number],
                 ["email_address", config.email_address || defaultConfig.email_address],
                 ["whatsapp_number", config.whatsapp_number || defaultConfig.whatsapp_number],
@@ -1065,12 +944,7 @@
             });
         }
         
-        if (contactPopupBtnDesktop) {
-            contactPopupBtnDesktop.addEventListener('click', (e) => {
-                e.preventDefault();
-                contactPopup.classList.add('active');
-            });
-        }
+
         
         if (closePopup) {
             closePopup.addEventListener('click', () => {
@@ -1100,27 +974,7 @@
             });
         });
         
-        // WhatsApp icon hover effect
-        const headerWhatsappMobile = document.getElementById('headerWhatsappMobile');
-        const headerWhatsappDesktop = document.getElementById('headerWhatsappDesktop');
-        
-        if (headerWhatsappMobile) {
-            headerWhatsappMobile.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.2)';
-            });
-            headerWhatsappMobile.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
-        }
-        
-        if (headerWhatsappDesktop) {
-            headerWhatsappDesktop.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.2)';
-            });
-            headerWhatsappDesktop.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
-        }
+
         
         // Initialize SDK
         if (window.elementSdk) {
@@ -1132,5 +986,5 @@
             });
         }
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b1f086a3288a7d9',t:'MTc2NjQwMDM2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b1f0d4d650eecb5',t:'MTc2NjQwMDU2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
