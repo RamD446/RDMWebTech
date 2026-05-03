@@ -49,11 +49,11 @@
       </div><span class="text-xl font-bold">RDM<span class="text-red-500">WebTech</span></span>
      </div>
      <div class="hidden md:flex items-center gap-8">
-      <a href="#home" class="nav-link text-gray-300 hover:text-white transition">Home</a> <a href="#services" class="nav-link text-gray-300 hover:text-white transition">Services</a> <a href="#pricing" class="nav-link text-gray-300 hover:text-white transition">Pricing</a> <a href="#contact" class="nav-link text-gray-300 hover:text-white transition">Contact</a>
-     </div><a href="#contact" class="hidden md:block bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg font-medium transition">Get Started</a> <button id="mobile-menu-btn" class="md:hidden text-white"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
+      <button class="nav-link text-gray-300 hover:text-white transition scroll-btn" data-section="home">Home</button> <button class="nav-link text-gray-300 hover:text-white transition scroll-btn" data-section="services">Services</button> <button class="nav-link text-gray-300 hover:text-white transition scroll-btn" data-section="pricing">Pricing</button> <button class="nav-link text-gray-300 hover:text-white transition scroll-btn" data-section="contact">Contact</button>
+     </div><button class="hidden md:block bg-red-600 hover:bg-red-700 px-5 py-2 rounded-lg font-medium transition scroll-btn" data-section="contact">Get Started</button> <button id="mobile-menu-btn" class="md:hidden text-white"> <i data-lucide="menu" class="w-6 h-6"></i> </button>
     </nav>
     <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-3">
-     <a href="#home" class="block text-gray-300 hover:text-white py-2">Home</a> <a href="#services" class="block text-gray-300 hover:text-white py-2">Services</a> <a href="#pricing" class="block text-gray-300 hover:text-white py-2">Pricing</a> <a href="#contact" class="block text-gray-300 hover:text-white py-2">Contact</a>
+     <button class="block w-full text-left text-gray-300 hover:text-white py-2 scroll-btn" data-section="home">Home</button> <button class="block w-full text-left text-gray-300 hover:text-white py-2 scroll-btn" data-section="services">Services</button> <button class="block w-full text-left text-gray-300 hover:text-white py-2 scroll-btn" data-section="pricing">Pricing</button> <button class="block w-full text-left text-gray-300 hover:text-white py-2 scroll-btn" data-section="contact">Contact</button>
     </div>
    </header><!-- Hero Section -->
    <section id="home" class="relative min-h-screen flex items-center justify-center px-4 pt-20 overflow-hidden">
@@ -76,6 +76,9 @@
       </div>
       <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-400"></i> 24/7 Support
       </div>
+     </div>
+     <div class="slide-up delay-5 mt-16">
+      <button id="scroll-down-btn" class="animate-bounce text-blue-400 hover:text-blue-300 transition"> <i data-lucide="chevron-down" class="w-8 h-8"></i> </button>
      </div>
     </div>
    </section><!-- Services Section -->
@@ -144,25 +147,25 @@
        <h3 class="text-sm md:text-lg font-bold mb-2">Starter</h3>
        <div class="text-2xl md:text-3xl font-bold mono text-red-500">
         ₹20,000
-       </div><a href="#contact" class="block text-center bg-gray-800 hover:bg-red-600 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4">Get Started</a>
+       </div><button class="block text-center w-full bg-gray-800 hover:bg-red-600 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4 scroll-btn" data-section="contact">Get Started</button>
       </div><!-- Basic -->
       <div class="price-card bg-gray-900 border border-gray-800 rounded-xl p-4 md:p-6 text-center">
        <h3 class="text-sm md:text-lg font-bold mb-2">Basic</h3>
        <div class="text-2xl md:text-3xl font-bold mono text-red-500">
         ₹30,000
-       </div><a href="#contact" class="block text-center bg-gray-800 hover:bg-red-600 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4">Get Started</a>
+       </div><button class="block text-center w-full bg-gray-800 hover:bg-red-600 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4 scroll-btn" data-section="contact">Get Started</button>
       </div><!-- Premium -->
       <div class="price-card bg-gradient-to-b from-red-950/50 to-gray-900 border-2 border-red-600 rounded-xl p-4 md:p-6 text-center">
        <h3 class="text-sm md:text-lg font-bold mb-2">Premium</h3>
        <div class="text-2xl md:text-3xl font-bold mono text-red-500">
         ₹50,000
-       </div><a href="#contact" class="block text-center bg-red-600 hover:bg-red-700 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4">Get Started</a>
+       </div><button class="block text-center w-full bg-red-600 hover:bg-red-700 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4 scroll-btn" data-section="contact">Get Started</button>
       </div><!-- Enterprise -->
       <div class="price-card bg-gray-900 border border-gray-800 rounded-xl p-4 md:p-6 text-center">
        <h3 class="text-sm md:text-lg font-bold mb-2">Enterprise</h3>
        <div class="text-2xl md:text-3xl font-bold mono text-red-500">
         ₹1,00,000
-       </div><a href="#contact" class="block text-center bg-gray-800 hover:bg-red-600 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4">Get Started</a>
+       </div><button class="block text-center w-full bg-gray-800 hover:bg-red-600 py-2 md:py-3 rounded-lg font-medium transition text-xs md:text-sm mt-4 scroll-btn" data-section="contact">Get Started</button>
       </div>
      </div>
     </div>
@@ -315,24 +318,26 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
+        // Smooth scroll navigation
+        document.querySelectorAll('.scroll-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = btn.dataset.section;
+                const element = document.getElementById(section);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Scroll down arrow
+        document.getElementById('scroll-down-btn').addEventListener('click', () => {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        });
+
         // Form - Store in Local Storage
         const contactForm = document.getElementById('contact-form');
-        
-        // Load saved submissions on page load
-        function loadFormSubmissions() {
-            const saved = localStorage.getItem('rdmwebtech-submissions');
-            return saved ? JSON.parse(saved) : [];
-        }
-        
-        // Save form submission
-        function saveFormSubmission(formData) {
-            const submissions = loadFormSubmissions();
-            submissions.push({
-                ...formData,
-                timestamp: new Date().toISOString()
-            });
-            localStorage.setItem('rdmwebtech-submissions', JSON.stringify(submissions));
-        }
         
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -340,12 +345,8 @@
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
-                plan: document.getElementById('plan').value,
                 message: document.getElementById('message').value
             };
-            
-            // Save to local storage
-            saveFormSubmission(formData);
             
             // Show success message
             document.getElementById('form-success').classList.remove('hidden');
@@ -366,5 +367,5 @@
 
         lucide.createIcons();
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f56a02ed52a7ef1',t:'MTc3NzcyMDcxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f5d9bca44b07ef1',t:'MTc3Nzc5MzkzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
